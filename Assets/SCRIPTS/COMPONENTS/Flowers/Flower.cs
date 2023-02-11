@@ -33,7 +33,7 @@ namespace GOM.Components.Flowers {
                 return;
             }
 
-            _currentWaypoint += HoneyPath.WaypointEnabled(_currentWaypoint + 1) ? 1 : 2;
+            _currentWaypoint += HoneyPath.WaypointEnabled(_currentWaypoint + 1) ? 1 : 4;
 
             _nextWaypoint = HoneyPath.GetWaypoint(_currentWaypoint);
         }

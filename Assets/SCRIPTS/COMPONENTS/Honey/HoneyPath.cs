@@ -11,6 +11,8 @@ namespace GOM.Components.Honey {
 
         public static HoneyWaypoint GetWaypoint(int index) {
             _pathWaypoints[index].SetFlowerComing(true);
+            if (index - 1 >= 0) _pathWaypoints[index - 1].SetFlowerComing(false);
+
             return _pathWaypoints[index]; 
         }
 
