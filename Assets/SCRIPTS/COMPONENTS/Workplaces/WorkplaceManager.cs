@@ -5,6 +5,12 @@ using UnityEngine;
 namespace GOM
 {
     abstract class Workplace {
+        protected string name;
+        protected string description;
+        protected int honeyProduction;
+
+        protected Sprite sprite;
+
         public abstract void Work();
     }
 
