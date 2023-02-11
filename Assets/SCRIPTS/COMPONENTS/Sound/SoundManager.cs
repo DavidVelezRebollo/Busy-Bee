@@ -60,12 +60,12 @@ namespace GOM.Components.Sounds {
         /// If not, it initializes the mixers volume.
         /// </summary>
         private void Start() {
-            if (PlayerPrefs.HasKey("GeneralVolume") && PlayerPrefs.HasKey("SoundEffectsVolume") &&
+            if (PlayerPrefs.HasKey("GeneralVolume") && PlayerPrefs.HasKey("SFXVolume") &&
                 PlayerPrefs.HasKey("MusicVolume"))
                 LoadVolume();
             else {
                 PlayerPrefs.SetFloat("GeneralVolume", 0);
-                PlayerPrefs.SetFloat("SoundEffectsVolume", 0);
+                PlayerPrefs.SetFloat("SFXVolume", 0);
                 PlayerPrefs.SetFloat("MusicVolume", 0);
             }
         }
@@ -75,7 +75,7 @@ namespace GOM.Components.Sounds {
         /// </summary>
         private void LoadVolume() {
             GeneralMixerGroup.audioMixer.SetFloat("Volume", PlayerPrefs.GetFloat("GeneralVolume"));
-            SoundEffectsMixerGroup.audioMixer.SetFloat("SoundEffects", PlayerPrefs.GetFloat("SoundEffectsVolume"));
+            SoundEffectsMixerGroup.audioMixer.SetFloat("SFX", PlayerPrefs.GetFloat("SFXVolume"));
             MusicMixerGroup.audioMixer.SetFloat("Music", PlayerPrefs.GetFloat("MusicVolume"));
         }
 

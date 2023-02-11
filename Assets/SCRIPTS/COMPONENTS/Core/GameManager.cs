@@ -1,5 +1,6 @@
-using System;
+using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Collections;
 
 namespace GOM.Components.Core {
     public enum GameState {
@@ -21,6 +22,13 @@ namespace GOM.Components.Core {
 
         #endregion
 
+        #region Serialized Fields
+
+        [Tooltip("In case we want to start the game from certain scene")]
+        [SerializeField] private bool DebugMode;
+
+        #endregion
+
         #region Private Fields
 
         private GameState _state; // Current state of the game
@@ -31,6 +39,8 @@ namespace GOM.Components.Core {
 
         private void Start() {
             _state = GameState.Menu;
+            if (!DebugMode)
+                StartCoroutine(LoadSceneAsync(0));
 
             Screen.SetResolution(Screen.width, Screen.height, !PlayerPrefs.HasKey("FullScreen") || PlayerPrefs.GetInt("FullScreen") != 0);
         }
@@ -57,6 +67,18 @@ namespace GOM.Components.Core {
         /// <returns>True if the game is paused or is on the menu. False otherwise</returns>
         public bool GamePaused() {
             return _state == GameState.Paused || _state == GameState.Menu;
+        }
+
+        #endregion
+
+        #region Auxiliar Methods
+
+        private static IEnumerator LoadSceneAsync(int index) {
+            yield return null;
+
+            AsyncOperation async = SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
+            while (!async.isDone)
+                yield return null;
         }
 
         #endregion
