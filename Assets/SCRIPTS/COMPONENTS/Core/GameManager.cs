@@ -40,7 +40,7 @@ namespace GOM.Components.Core {
         private void Start() {
             _state = GameState.Menu;
             if (!DebugMode)
-                StartCoroutine(LoadSceneAsync(0));
+                StartCoroutine(LoadSceneAsync(1));
 
             Screen.SetResolution(Screen.width, Screen.height, !PlayerPrefs.HasKey("FullScreen") || PlayerPrefs.GetInt("FullScreen") != 0);
         }
@@ -76,7 +76,7 @@ namespace GOM.Components.Core {
         private static IEnumerator LoadSceneAsync(int index) {
             yield return null;
 
-            AsyncOperation async = SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
+            AsyncOperation async = SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
             while (!async.isDone)
                 yield return null;
         }
