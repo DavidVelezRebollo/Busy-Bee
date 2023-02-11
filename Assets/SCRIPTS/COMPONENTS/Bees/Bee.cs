@@ -1,10 +1,15 @@
-using GOM.Components.Workplaces;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOM.Components.Bees {
-    public abstract class Bee : MonoBehaviour {
-        private Workplace _currentWorkplace;
+[CreateAssetMenu(fileName = "New Bee", menuName = "Bee")]
+public class Bee : ScriptableObject
+{
+    public new string name;
+    public string description;
 
-        protected abstract void Work();
-    }
+    public Sprite beeSprite;
+
+    public int workSpeed = 1; 
+    public int effectiveWorkSpeed = 2;
 }

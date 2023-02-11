@@ -1,11 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOM.Components.Workplaces {
-    public abstract class Workplace : MonoBehaviour {
-        protected void OnTriggerEnter2D(Collider2D collision) {
-            WorkHoney();
-        }
+[CreateAssetMenu(fileName = "New Workplace", menuName = "Workplace")]
+public class Workplace : ScriptableObject
+{
+    public new string name;
+    public string description;
 
-        protected abstract void WorkHoney();
-    }
+    public Sprite workplaceSprite;
+
+    public int honeyProduction;
 }
