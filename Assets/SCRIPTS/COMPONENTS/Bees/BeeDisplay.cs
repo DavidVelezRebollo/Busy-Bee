@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+using GOM.Classes.Bees;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GOM.Components.Bees
-{
-    public class BeeDisplay : MonoBehaviour
-    {
+namespace GOM.Components.Bees {
+    public class BeeDisplay : MonoBehaviour {
         public Bee beeType;
 
         public Text nameText;
@@ -17,15 +14,13 @@ namespace GOM.Components.Bees
         public Text workSpeedText;
         public Text effectiveWorkSpeedText;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-            nameText.text = beeType.name;
-            descriptionText.text = beeType.description;
-            beeSprite.sprite = beeType.beeSprite;
+        void Start() {
+            nameText.text = beeType.Name;
+            descriptionText.text = beeType.Description;
+            beeSprite.sprite = beeType.BeeSprite;
 
-            workSpeedText.text = beeType.workSpeed.ToString();
-            effectiveWorkSpeedText.text = beeType.effectiveWorkSpeed.ToString();
+            workSpeedText.text = beeType.WorkSpeed.ToString();
+            effectiveWorkSpeedText.text = beeType.EffectiveWorkSpeed.ToString();
         }
     }
 }

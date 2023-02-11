@@ -1,19 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOM.Components.Workplaces
-{
-    internal class Mix : Workplace
-    {
-        private string name;
-        private string description;
-        private int honeyProduction;
+namespace GOM.Components.Workplaces {
+    public class Mix : Workplace {
 
-        private Sprite sprite;
-
-        public override void Work()
-        {
+        public override void Work() {
             Debug.Log("Mix");
         }
     }
