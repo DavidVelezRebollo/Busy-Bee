@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOM
+namespace GOM.Components.Workplaces
 {
     internal class Crush : Workplace
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GOM
+namespace GOM.Components.Bees
 {
     public class Bee : ScriptableObject
     {

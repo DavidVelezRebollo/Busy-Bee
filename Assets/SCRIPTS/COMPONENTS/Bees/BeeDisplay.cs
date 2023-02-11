@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GOM
+namespace GOM.Components.Bees
 {
     public class BeeDisplay : MonoBehaviour
     {
