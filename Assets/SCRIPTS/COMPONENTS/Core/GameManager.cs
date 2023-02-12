@@ -1,3 +1,4 @@
+using GOM.Shared;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
@@ -6,6 +7,8 @@ namespace GOM.Components.Core {
     public enum GameState {
         Menu,
         Paused,
+        Lose,
+        Won,
         Playing
     }
 
@@ -39,10 +42,18 @@ namespace GOM.Components.Core {
 
         private void Start() {
             _state = GameState.Menu;
-            if (!DebugMode)
-                StartCoroutine(LoadSceneAsync(1));
+            if (!DebugMode) {
+                StartCoroutine(LoadSceneAsync((int) SceneIndexes.MENU));
+            }
 
             Screen.SetResolution(Screen.width, Screen.height, !PlayerPrefs.HasKey("FullScreen") || PlayerPrefs.GetInt("FullScreen") != 0);
+        }
+
+        private void Update() {
+            if(!Input.GetKeyDown(KeyCode.Escape)) return;
+            if (_state != GameState.Playing && _state != GameState.Paused) return;
+
+            _state = _state == GameState.Playing ? GameState.Paused : GameState.Playing;
         }
 
         #endregion
@@ -65,8 +76,20 @@ namespace GOM.Components.Core {
         /// Checks if the game is currently paused
         /// </summary>
         /// <returns>True if the game is paused or is on the menu. False otherwise</returns>
+        public bool GameStop() {
+            return _state != GameState.Playing;
+        }
+
         public bool GamePaused() {
-            return _state == GameState.Paused || _state == GameState.Menu;
+            return _state == GameState.Paused;
+        }
+
+        public bool GameLost() {
+            return _state == GameState.Lose;
+        }
+
+        public bool GameWon() {
+            return _state == GameState.Won;
         }
 
         #endregion

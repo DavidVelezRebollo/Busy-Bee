@@ -473,7 +473,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000029564, y: 0.00001049}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0.00001049}
   m_SizeDelta: {x: 539.7805, y: 371.969}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &282307882
@@ -519,7 +519,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 282307883}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 759533223}
+        m_TargetAssemblyTypeName: GOM.Components.Menu.Menu, Assembly-CSharp
+        m_MethodName: OnTutorialButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &282307883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4063,7 +4075,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2032485314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09ebb810caa5ab147bbc273767a2f015, type: 3}
+  m_Script: {fileID: 11500000, guid: 882af7362e5acfa45a70a2e79932d42a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2048936846

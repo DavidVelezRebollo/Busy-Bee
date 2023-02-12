@@ -1,14 +1,19 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using GOM.Components.Sounds;
+using GOM.Shared;
 using GOM.Components.Core;
 
 namespace GOM.Components.Menu {
     public class Menu : MonoBehaviour {
         [SerializeField] private GameObject LoadingScreen;
         [SerializeField] private Image LoadingBar;
+
+        private List<AsyncOperation> _sceneLoading = new List<AsyncOperation>();
+        private float _totalSceneProgress;
 
         #region Methods
 
@@ -17,8 +22,22 @@ namespace GOM.Components.Menu {
         /// </summary>
         public void OnStartButton()
         {
+            LoadingScreen.SetActive(true);
+            _sceneLoading.Add(SceneManager.UnloadSceneAsync((int) SceneIndexes.MENU));
+            _sceneLoading.Add(SceneManager.LoadSceneAsync((int) SceneIndexes.GAME, LoadSceneMode.Additive));
+
             StartCoroutine(loadSceneAsync());
+            GameManager.Instance.SetGameState(GameState.Playing);
             //PlayButton();
+        }
+
+        public void OnTutorialButton() {
+            LoadingScreen.SetActive(true);
+            _sceneLoading.Add(SceneManager.UnloadSceneAsync((int)SceneIndexes.MENU));
+            _sceneLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.TUTORIAL, LoadSceneMode.Additive));
+
+            StartCoroutine(loadSceneAsync());
+            GameManager.Instance.SetGameState(GameState.Playing);
         }
 
         /// <summary>
@@ -40,16 +59,24 @@ namespace GOM.Components.Menu {
 
         private IEnumerator loadSceneAsync()
         {
-            AsyncOperation loadScene = SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
-            LoadingScreen.SetActive(true);
 
-            while (!loadScene.isDone)
-            {
-                float progressValue = Mathf.Clamp01(loadScene.progress / 0.09f);
-                LoadingBar.fillAmount = progressValue;
+            for (int i = 0; i < _sceneLoading.Count; i++) {
+                while (!_sceneLoading[i].isDone) {
+                    _totalSceneProgress = 0;
 
-                yield return null;
+                    foreach(AsyncOperation operation in _sceneLoading) {
+                        _totalSceneProgress += operation.progress;
+                    }
+
+                    _totalSceneProgress = (_totalSceneProgress / _sceneLoading.Count) * 100f;
+                    LoadingBar.fillAmount = Mathf.RoundToInt(_totalSceneProgress);
+
+                    yield return null;
+                }
             }
+
+
+            LoadingScreen.SetActive(false);
         }
 
         #endregion

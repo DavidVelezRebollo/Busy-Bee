@@ -3,11 +3,14 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
 using GOM.Components.Sounds;
+using GOM.Components.Core;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace GOM.Components.Menu {
     public class Settings : MonoBehaviour {
-        #region Private Fields
+        #region Serialized Fields
 
         [Header("Unity Fields")]
         [Tooltip("AudioMixer.")]
@@ -35,6 +38,12 @@ namespace GOM.Components.Menu {
         [Header("Toggles")]
         [Tooltip("Toggle which represents if the game is full screen or not")]
         [SerializeField] private Toggle FullScreenToggle;
+
+        #endregion
+
+        #region Private Fields
+
+        private List<AsyncOperation> _scenesLoading = new List<AsyncOperation>();
 
         #endregion
 
@@ -67,7 +76,7 @@ namespace GOM.Components.Menu {
         {
             AudioMixer.SetFloat("Volume", PlayerPrefs.GetFloat("GeneralVolume"));
             AudioMixer.SetFloat("Music", PlayerPrefs.GetFloat("MusicVolume"));
-            AudioMixer.SetFloat("SoundEffects", PlayerPrefs.GetFloat("SoundEffectsVolume"));
+            AudioMixer.SetFloat("SFX", PlayerPrefs.GetFloat("SoundEffectsVolume"));
 
             GeneralSlider.value = PlayerPrefs.GetFloat("GeneralVolume");
             MusicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
@@ -146,13 +155,38 @@ namespace GOM.Components.Menu {
         /// <param name="volume">New value of the sound effects volume.</param>
         public void SetSoundEffectsVolume(float volume)
         {
-            AudioMixer.SetFloat("SoundEffects", volume);
+            AudioMixer.SetFloat("SFX", volume);
             PlayerPrefs.SetFloat("SoundEffectsVolume", volume);
         }
 
-        public void ExitToMenu()
+        public void ExitToMenuFromTutorial()
         {
-            SceneManager.LoadScene(1);
+            GameManager.Instance.SetGameState(GameState.Menu);
+            _scenesLoading.Add(SceneManager.UnloadSceneAsync(2));
+            _scenesLoading.Add(SceneManager.LoadSceneAsync(1));
+
+            StartCoroutine(LoadMenuScene());
+        }
+
+        public void ExitToMenuFromGame() {
+            GameManager.Instance.SetGameState(GameState.Menu);
+            _scenesLoading.Add(SceneManager.UnloadSceneAsync(3));
+            _scenesLoading.Add(SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive));
+
+            StartCoroutine(LoadMenuScene());
+        }
+
+        public void CloseMenu() {
+            GameManager.Instance.SetGameState(GameState.Playing);
+        }
+
+        #endregion
+
+        #region Auxiliar Methods
+
+        private IEnumerator LoadMenuScene() {
+            for (int i = 0; i < _scenesLoading.Count; i++)
+                while (!_scenesLoading[i].isDone) yield return null;
         }
 
         #endregion

@@ -15,7 +15,7 @@ namespace GOM.Components.Honey {
         }
 
         private void Update() {
-            _timer.UpdateTimer();
+            _timer.UpdateTimer(false);
 
             if (_timer.GetMinuteCount() > 0 || _timer.GetSecondCount() > 0) return;
 

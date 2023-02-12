@@ -1,5 +1,6 @@
 using GOM.Components.Honey;
 using GOM.Classes.Flowers;
+using GOM.Components.Core;
 using UnityEngine;
 using System.Collections;
 using System;
@@ -33,7 +34,7 @@ namespace GOM.Components.Flowers {
         }
 
         private void Update() {
-            if (_waiting) return;
+            if (_waiting || GameManager.Instance.GameStop()) return;
 
             _processTimeElapsed = 0;
             transform.position = Vector3.MoveTowards(transform.position, _nextWaypoint.transform.position, Speed * Time.deltaTime);

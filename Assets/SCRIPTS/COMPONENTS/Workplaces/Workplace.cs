@@ -1,6 +1,8 @@
-using UnityEngine;
 using GOM.Components.Flowers;
 using GOM.Components.Bees;
+using GOM.Components.Player;
+using GOM.Components.Core;
+using UnityEngine;
 
 namespace GOM.Components.Workplaces {
     public abstract class Workplace : MonoBehaviour {
@@ -8,7 +10,8 @@ namespace GOM.Components.Workplaces {
         [SerializeField] protected float HoneyProduction;
         [SerializeField] protected BeeComponent WorkingBee;
         [SerializeField] protected int NewHoneySprite;
-        
+
+        protected PlayerManager _player;
         protected int Index;
         protected FlowerComponent CurrentFlower;
         protected WorkplaceUI UI;
@@ -17,10 +20,18 @@ namespace GOM.Components.Workplaces {
 
         private void Start() {
             UI = GetComponent<WorkplaceUI>();
+            _player = PlayerManager.Instance;
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
             if (!collision.gameObject.CompareTag("Honey")) return;
+
+            if (WorkingBee == null) {
+                _player.AddMiss();
+                _withFlower = false;
+                Destroy(collision.gameObject);
+                return;
+            }
 
             CurrentFlower = collision.GetComponent<FlowerComponent>();
             CurrentFlower.OnFlowerProccess += TransformPolen;
@@ -30,7 +41,7 @@ namespace GOM.Components.Workplaces {
         }
 
         private void OnTriggerExit2D(Collider2D collision) {
-            if (!collision.gameObject.CompareTag("Honey")) return;
+            if (!collision.gameObject.CompareTag("Honey") || WorkingBee == null) return;
 
             _withFlower = false;
             CurrentFlower.OnFlowerProccess -= TransformPolen;
@@ -40,7 +51,7 @@ namespace GOM.Components.Workplaces {
         }
 
         public void Update() {
-            if (!_withFlower) return;
+            if (!_withFlower || GameManager.Instance.GameStop()) return;
             
             Work();
         }

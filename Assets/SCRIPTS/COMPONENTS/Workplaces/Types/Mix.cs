@@ -5,7 +5,7 @@ namespace GOM.Components.Workplaces {
     {
         public override void TransformPolen()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Mixed");
         }
     }
 }

@@ -1,3 +1,4 @@
+using GOM.Components.Core;
 using UnityEngine;
 
 namespace GOM.Classes.UI {
@@ -28,8 +29,10 @@ namespace GOM.Classes.UI {
 
         #region Methods
 
-        public void UpdateTimer() {
-			_timer -= Time.deltaTime;
+        public void UpdateTimer(bool add) {
+			if (GameManager.Instance.GameStop()) return;
+
+			_timer = add ? _timer + Time.deltaTime : _timer - Time.deltaTime;
 			_currentMinutes = Mathf.FloorToInt(_timer / 60f);
 			_currentSeconds = Mathf.FloorToInt(_timer % 60f);
 		}
