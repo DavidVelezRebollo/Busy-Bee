@@ -31,6 +31,7 @@ namespace GOM.Components.Flowers {
         private void Start() {
             _renderer = GetComponentInChildren<SpriteRenderer>();
             _nextWaypoint = HoneyPath.GetWaypoint(_currentWaypoint);
+            _renderer.sprite = FlowerType.Sprites[0];
         }
 
         private void Update() {

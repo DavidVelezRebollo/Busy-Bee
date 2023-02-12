@@ -9,6 +9,7 @@ namespace GOM.Components.Workplaces {
         public override void TransformPolen()
         {
             Debug.Log("Transformado en Polen");
+            CurrentFlower.ChangeSprite(NewHoneySprite);
         }
     }
 }

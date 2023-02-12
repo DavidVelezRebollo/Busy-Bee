@@ -6,6 +6,7 @@ namespace GOM.Components.Workplaces {
         public override void TransformPolen()
         {
             Debug.Log("Crushed");
+            CurrentFlower.ChangeSprite(NewHoneySprite);
         }
     }
 }

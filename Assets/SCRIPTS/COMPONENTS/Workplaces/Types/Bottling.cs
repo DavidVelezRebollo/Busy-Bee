@@ -6,6 +6,7 @@ namespace GOM.Components.Workplaces {
         public override void TransformPolen()
         {
             Debug.Log("Bottled");
+            CurrentFlower.ChangeSprite(NewHoneySprite);
         }
     }
 }

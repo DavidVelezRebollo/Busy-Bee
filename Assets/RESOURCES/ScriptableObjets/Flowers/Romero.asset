@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Romero
   m_EditorClassIdentifier: 
   Name: Romero
-  Sprite: {fileID: 0}
+  Sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ProcessTime: 4
