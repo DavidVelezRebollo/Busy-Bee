@@ -1,14 +1,15 @@
 using UnityEngine;
 using GOM.Components.Flowers;
-using GOM.Classes.Bees;
+using GOM.Components.Bees;
 
 namespace GOM.Components.Workplaces {
     public abstract class Workplace : MonoBehaviour {
         
         [SerializeField] protected float HoneyProduction;
-        [SerializeField] protected Sprite NewHoneySprite;
-
-        protected Bee WorkingBee;
+        [SerializeField] protected BeeComponent WorkingBee;
+        [SerializeField] protected int NewHoneySprite;
+        
+        protected int Index;
         protected FlowerComponent CurrentFlower;
         protected WorkplaceUI UI;
 
@@ -40,6 +41,16 @@ namespace GOM.Components.Workplaces {
             
             Work();
         }
+
+        public bool HaveBee() { return WorkingBee != null; }
+
+        public void SetWorkingBee(BeeComponent bee) { WorkingBee = bee; }
+
+        public BeeComponent GetWorkingBee() { return WorkingBee; }
+
+        public int GetWorkplaceIndex() { return Index; }
+
+        public void SetWorkplaceIndex(int index) { Index = index; }
 
         public void Work() {
             CurrentFlower.AddProcessTimeElapsed(HoneyProduction * Time.deltaTime);

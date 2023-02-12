@@ -52,7 +52,7 @@ namespace GOM.Components.Flowers {
 
         public float GetProccessPercentage() { return _processTimeElapsed / FlowerType.ProcessTime; }
 
-        public void ChangeSprite(Sprite sprite) { _renderer.sprite = sprite; }
+        public void ChangeSprite(int spriteIndex) { _renderer.sprite = FlowerType.Sprites[spriteIndex]; }
 
         #endregion
 
