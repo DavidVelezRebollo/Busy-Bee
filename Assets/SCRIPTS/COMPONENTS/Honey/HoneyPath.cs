@@ -9,7 +9,12 @@ namespace GOM.Components.Honey {
             _pathWaypoints = GetComponentsInChildren<HoneyWaypoint>(true);
         }
 
-        public static HoneyWaypoint GetWaypoint(int index) { return _pathWaypoints[index]; }
+        public static HoneyWaypoint GetWaypoint(int index) {
+            _pathWaypoints[index].SetFlowerComing(true);
+            if (index - 1 >= 0) _pathWaypoints[index - 1].SetFlowerComing(false);
+
+            return _pathWaypoints[index]; 
+        }
 
         public static bool WaypointEnabled(int index) { return _pathWaypoints[index].gameObject.activeInHierarchy; }
 

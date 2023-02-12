@@ -3,16 +3,16 @@ using UnityEngine;
 namespace GOM.Components.Honey {
     public class Lever : MonoBehaviour {
         [Tooltip("First path which the lever will enable or disable")]
-        [SerializeField] private GameObject[] FirstPath;
+        [SerializeField] private GameObject FirstPath;
         [Tooltip("Second path which the lever will enable or disable")]
-        [SerializeField] private GameObject[] SecondPath;
+        [SerializeField] private GameObject SecondPath;
 
         private void OnMouseDown() {
-            foreach (GameObject go in FirstPath)
-                go.SetActive(!go.activeSelf);
+            if (FirstPath.GetComponent<HoneyWaypoint>().FlowerComing() ||
+                SecondPath.GetComponent<HoneyWaypoint>().FlowerComing()) return;
 
-            foreach (GameObject go in SecondPath)
-                go.SetActive(!go.activeSelf);
+            FirstPath.SetActive(!FirstPath.activeInHierarchy);
+            SecondPath.SetActive(!SecondPath.activeInHierarchy);
         }
 
     }

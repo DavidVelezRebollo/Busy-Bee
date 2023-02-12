@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SCRIPTS/COMPONENTS/Bees/BeeDisplay.cs.meta
+guid: 882af7362e5acfa45a70a2e79932d42a
+========
 guid: 09ebb810caa5ab147bbc273767a2f015
+>>>>>>>> main:Assets/SCRIPTS/COMPONENTS/Menu/Credits.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SCRIPTS/COMPONENTS/Bees/BeeDisplay.cs.meta
+guid: c865401a117bb9d44b3c72f71661c252
+========
+guid: 09ebb810caa5ab147bbc273767a2f015
+>>>>>>>> main:Assets/SCRIPTS/COMPONENTS/Menu/Credits.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
