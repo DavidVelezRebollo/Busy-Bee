@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f64adf70cf4bc41aa8360158c45d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FlowerType: {fileID: 11400000, guid: 83c8d47a997f784429ff72e31167b714, type: 2}
   Speed: 3
 --- !u!1 &6475370321178023022
 GameObject:
