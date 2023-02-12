@@ -25,6 +25,8 @@ namespace GOM.Components.Workplaces {
             CurrentFlower = collision.GetComponent<FlowerComponent>();
             CurrentFlower.OnFlowerProccess += TransformPolen;
             _withFlower = true;
+            WorkingBee.SetWorkingState(true);
+            
         }
 
         private void OnTriggerExit2D(Collider2D collision) {
@@ -34,6 +36,7 @@ namespace GOM.Components.Workplaces {
             CurrentFlower.OnFlowerProccess -= TransformPolen;
             CurrentFlower = null;
             UI.RestartProgressBar();
+            WorkingBee.SetWorkingState(false);
         }
 
         public void Update() {

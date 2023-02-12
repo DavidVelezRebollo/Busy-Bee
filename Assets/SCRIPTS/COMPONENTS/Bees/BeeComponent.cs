@@ -13,6 +13,7 @@ namespace GOM.Components.Bees {
         private Vector3 _lastStationPosition;
         private int _lastWorkplace;
         private bool _isMoving;
+        private bool _isWorking;
 
         private void Start() {
             _workplaceManager = WorkplaceManager.Instance;
@@ -22,6 +23,8 @@ namespace GOM.Components.Bees {
         }
 
         private void OnMouseDrag() {
+            if (_isWorking) return;
+
             Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
             transform.position = new Vector3(mousePosition.x, mousePosition.y);
@@ -53,5 +56,7 @@ namespace GOM.Components.Bees {
             _lastStationPosition = Vector3.zero;
             _lastWorkplace = -1;
         }
+
+        public void SetWorkingState(bool isWorking) { _isWorking = isWorking; }
     }
 }
