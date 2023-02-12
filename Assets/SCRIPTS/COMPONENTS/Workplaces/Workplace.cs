@@ -1,13 +1,43 @@
 using UnityEngine;
+using GOM.Components.Flowers;
+using GOM.Classes.Bees;
 
 namespace GOM.Components.Workplaces {
     public abstract class Workplace : MonoBehaviour {
-        protected string Name;
-        protected string Description;
-        protected int HoneyProduction;
+        
+        [SerializeField] protected int HoneyProduction;
+        [SerializeField] protected Sprite NewHoneySprite;
+        protected Bee WorkingBee;
+        protected FlowerComponent CurrentFlower;
 
-        protected Sprite Sprite;
+        private bool _withFlower;
 
-        public abstract void Work();
+        private void OnTriggerEnter2D(Collider2D collision) {
+            if (!collision.gameObject.CompareTag("Honey")) return;
+
+            CurrentFlower = collision.GetComponent<FlowerComponent>();
+            CurrentFlower.OnFlowerProccess += TransformPolen;
+            _withFlower = true;
+        }
+
+        private void OnTriggerExit2D(Collider2D collision) {
+            if (!collision.gameObject.CompareTag("Honey")) return;
+
+            _withFlower = false;
+            CurrentFlower.OnFlowerProccess -= TransformPolen;
+            CurrentFlower = null;
+        }
+
+        public void Update() {
+            if (!_withFlower) return;
+            
+            Work();
+        }
+        public void Work() {
+            CurrentFlower.AddProcessTimeElapsed(HoneyProduction * Time.deltaTime);
+        }
+
+        public abstract void TransformPolen();
     }
 }
+

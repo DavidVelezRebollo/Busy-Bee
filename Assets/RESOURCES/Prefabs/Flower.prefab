@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3955507572924590453}
   m_Layer: 0
   m_Name: Flower
-  m_TagString: Untagged
+  m_TagString: Honey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f64adf70cf4bc41aa8360158c45d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FlowerType: {fileID: 11400000, guid: 83c8d47a997f784429ff72e31167b714, type: 2}
   Speed: 3
 --- !u!1 &6475370321178023022
 GameObject:
