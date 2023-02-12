@@ -3,6 +3,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
 using GOM.Components.Sounds;
+using UnityEngine.SceneManagement;
 
 namespace GOM.Components.Menu {
     public class Settings : MonoBehaviour {
@@ -147,6 +148,11 @@ namespace GOM.Components.Menu {
         {
             AudioMixer.SetFloat("SoundEffects", volume);
             PlayerPrefs.SetFloat("SoundEffectsVolume", volume);
+        }
+
+        public void ExitToMenu()
+        {
+            SceneManager.LoadScene(1);
         }
 
         #endregion
