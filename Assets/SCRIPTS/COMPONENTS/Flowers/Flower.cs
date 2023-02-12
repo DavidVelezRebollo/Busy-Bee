@@ -9,7 +9,9 @@ namespace GOM.Components.Flowers {
 
         private HoneyWaypoint _nextWaypoint; // Waypoint that the flower will follow
         private int _currentWaypoint = 0;
-        private bool _waiting = false;
+        public bool _waiting = false;
+        public int process_time_passed = 0; //Time that has been processed (seconds)
+        public int process_time = 4; //Time that takes the flower to process (seconds)
 
         private void Start() {
             _nextWaypoint = HoneyPath.GetWaypoint(_currentWaypoint);
