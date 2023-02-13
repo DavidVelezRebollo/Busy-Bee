@@ -35,7 +35,6 @@ namespace GOM.Components.Flowers {
         private void Start() {
             _renderer = GetComponentInChildren<SpriteRenderer>();
             _nextWaypoint = HoneyPath.GetWaypoint(_currentWaypoint);
-            _renderer.sprite = FlowerType.Sprites[0];
         }
 
         private void Update() {
@@ -85,9 +84,10 @@ namespace GOM.Components.Flowers {
 
         private void recollect() {
             Destroy(gameObject);
+            OnFlowerRecollect?.Invoke();
         }
 
-        private void miss() {
+        public void Miss() {
             Destroy(gameObject);
             OnFlowerMiss?.Invoke();
         }

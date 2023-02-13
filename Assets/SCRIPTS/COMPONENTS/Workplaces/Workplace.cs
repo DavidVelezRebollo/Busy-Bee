@@ -30,7 +30,7 @@ namespace GOM.Components.Workplaces {
             if (WorkingBee == null) {
                 _player.AddMiss();
                 _withFlower = false;
-                Destroy(collision.gameObject);
+                collision.GetComponent<FlowerComponent>().Miss();
                 return;
             }
 

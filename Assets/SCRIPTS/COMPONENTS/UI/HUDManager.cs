@@ -82,7 +82,13 @@ namespace GOM.Components.UI {
         }
 
         private void ChangeCurrentFlower() {
-            
+            for(int i = 0; i < _nextHoneys.Count; i++) {
+                if(_nextHoneys.Count != 1)
+                    NextHoney[i].sprite = NextHoney[i + 1].sprite;
+            }
+
+            NextHoney[_currentFlowerIndex - 1].color = new Color(1f, 1f, 1f, 0f);
+            _nextHoneys.RemoveAt(--_currentFlowerIndex);
         }
     }
 }
