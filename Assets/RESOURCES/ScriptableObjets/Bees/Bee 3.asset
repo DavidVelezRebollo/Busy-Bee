@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Description: 
-  BeeSprite: {fileID: 0}
+  BeeSprite: {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}
   EffectiveWorkplaces: 0100000002000000
   WorkSpeed: 0.6
   EffectiveWorkSpeed: 1.2
