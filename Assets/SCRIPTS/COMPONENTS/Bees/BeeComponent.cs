@@ -1,12 +1,12 @@
 using GOM.Classes.Bees;
 using GOM.Components.Workplaces;
+using GOM.Components.Sounds;
 using GOM.Shared;
 using UnityEngine;
 
 namespace GOM.Components.Bees {
     public class BeeComponent : MonoBehaviour {
         [SerializeField] private Bee BeeType;
-        [SerializeField] private LayerMask Collision;
 
         private WorkplaceManager _workplaceManager;
         private SpriteRenderer _renderer;
@@ -25,6 +25,14 @@ namespace GOM.Components.Bees {
             _renderer.sprite = BeeType.BeeSprite;
             _initialPosition = transform.position;
             _lastStationPosition = Vector3.zero;
+        }
+
+        private void OnMouseDown() {
+            if (_isWorking) return;
+
+            if (SoundManager.Instance.IsPlaying(BeeType.SFX)) return;
+
+            SoundManager.Instance.Play(BeeType.SFX);
         }
 
         private void OnMouseDrag() {

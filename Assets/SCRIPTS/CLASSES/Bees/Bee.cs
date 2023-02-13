@@ -6,6 +6,7 @@ namespace GOM.Classes.Bees {
     public class Bee : ScriptableObject {
         public string Name;
         public string Description;
+        public string SFX;
 
         public Sprite BeeSprite;
 

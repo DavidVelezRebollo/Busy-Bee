@@ -1,4 +1,5 @@
 using GOM.Shared;
+using GOM.Components.Sounds;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
@@ -41,7 +42,7 @@ namespace GOM.Components.Core {
         #region Unity Events
 
         private void Start() {
-            _state = !DebugMode ? GameState.Menu : GameState.Playing;
+            SetGameState(!DebugMode ? GameState.Menu : GameState.Playing);
             if (!DebugMode) {
                 StartCoroutine(LoadSceneAsync((int) SceneIndexes.MENU));
             }
@@ -66,6 +67,7 @@ namespace GOM.Components.Core {
         /// <param name="state">The new state of the game</param>
         public void SetGameState(GameState state) {
             _state = state;
+            HandleMusic();
         }
 
         #endregion
@@ -102,6 +104,11 @@ namespace GOM.Components.Core {
             AsyncOperation async = SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
             while (!async.isDone)
                 yield return null;
+        }
+
+        private void HandleMusic() {
+            SoundManager.Instance.Play(_state == GameState.Menu ? "MusicMenu" : "MainTheme");
+            SoundManager.Instance.Stop(_state == GameState.Menu ? "MainTheme" : "MusicMenu");
         }
 
         #endregion

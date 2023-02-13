@@ -305,9 +305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeeType: {fileID: 11400000, guid: 76079ae38d756f14eb00621cf49075a2, type: 2}
-  Collision:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!4 &147212629
 Transform:
   m_ObjectHideFlags: 0
@@ -608,7 +605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 230060073}
   - component: {fileID: 230060074}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: BeeStation
   m_TagString: BeeStation
   m_Icon: {fileID: 0}
@@ -886,7 +883,7 @@ GameObject:
   - component: {fileID: 357440835}
   - component: {fileID: 357440833}
   - component: {fileID: 357440834}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CoverWorkplace
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -999,7 +996,7 @@ GameObject:
   - component: {fileID: 365012726}
   - component: {fileID: 365012728}
   - component: {fileID: 365012724}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BottlingWorkplace
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -1247,7 +1244,7 @@ GameObject:
   - component: {fileID: 517427198}
   - component: {fileID: 517427197}
   - component: {fileID: 517427199}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PolenWorkplace
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -1357,7 +1354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 566432802}
   - component: {fileID: 566432803}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: BeeStation
   m_TagString: BeeStation
   m_Icon: {fileID: 0}
@@ -1550,6 +1547,7 @@ GameObject:
   - component: {fileID: 686350387}
   - component: {fileID: 686350386}
   - component: {fileID: 686350385}
+  - component: {fileID: 686350388}
   m_Layer: 0
   m_Name: Workplace UI
   m_TagString: Untagged
@@ -1639,6 +1637,18 @@ Canvas:
   m_SortingLayerID: -1883226359
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &686350388
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686350383}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &686805630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,6 +2062,7 @@ GameObject:
   - component: {fileID: 801883722}
   - component: {fileID: 801883721}
   - component: {fileID: 801883720}
+  - component: {fileID: 801883723}
   m_Layer: 0
   m_Name: Workplace UI
   m_TagString: Untagged
@@ -2141,6 +2152,18 @@ Canvas:
   m_SortingLayerID: -1883226359
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &801883723
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801883718}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &807447166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,7 +2339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 829173714}
   - component: {fileID: 829173715}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: BeeStation
   m_TagString: BeeStation
   m_Icon: {fileID: 0}
@@ -2376,6 +2399,7 @@ GameObject:
   - component: {fileID: 848171252}
   - component: {fileID: 848171251}
   - component: {fileID: 848171250}
+  - component: {fileID: 848171253}
   m_Layer: 0
   m_Name: Workplace UI
   m_TagString: Untagged
@@ -2465,6 +2489,18 @@ Canvas:
   m_SortingLayerID: -1883226359
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &848171253
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848171248}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &858132504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2627,7 +2663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 883670545}
   - component: {fileID: 883670546}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: BeeStation
   m_TagString: BeeStation
   m_Icon: {fileID: 0}
@@ -3809,7 +3845,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1883226359
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5179,6 +5215,7 @@ GameObject:
   - component: {fileID: 1541209062}
   - component: {fileID: 1541209061}
   - component: {fileID: 1541209060}
+  - component: {fileID: 1541209063}
   m_Layer: 0
   m_Name: Workplace UI
   m_TagString: Untagged
@@ -5268,6 +5305,18 @@ Canvas:
   m_SortingLayerID: -1883226359
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1541209063
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541209058}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1574995242
 GameObject:
   m_ObjectHideFlags: 0
@@ -5477,7 +5526,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1883226359
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5857,7 +5906,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 914efaedcfb79df4c90d25369e3b05d8, type: 3}
-  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
+  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5880,7 +5929,7 @@ GameObject:
   - component: {fileID: 1672521463}
   - component: {fileID: 1672521465}
   - component: {fileID: 1672521466}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CrushWorkplace
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -6458,7 +6507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1788123400}
   - component: {fileID: 1788123401}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: BeeStation
   m_TagString: BeeStation
   m_Icon: {fileID: 0}
@@ -6688,7 +6737,7 @@ GameObject:
   - component: {fileID: 1904269385}
   - component: {fileID: 1904269384}
   - component: {fileID: 1904269383}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MixWorkplace
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -6940,9 +6989,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeeType: {fileID: 11400000, guid: ba4cc3246ba4c6b4d87cbda98ad003fe, type: 2}
-  Collision:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!4 &1949214428
 Transform:
   m_ObjectHideFlags: 0
@@ -7315,7 +7361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2012674833}
   - component: {fileID: 2012674834}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: BeeStation
   m_TagString: BeeStation
   m_Icon: {fileID: 0}
@@ -7376,7 +7422,7 @@ GameObject:
   - component: {fileID: 2016034888}
   - component: {fileID: 2016034890}
   - component: {fileID: 2016034886}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BottlingWorkplace
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -7488,6 +7534,7 @@ GameObject:
   - component: {fileID: 2035267418}
   - component: {fileID: 2035267417}
   - component: {fileID: 2035267416}
+  - component: {fileID: 2035267419}
   m_Layer: 0
   m_Name: Workplace UI
   m_TagString: Untagged
@@ -7577,6 +7624,18 @@ Canvas:
   m_SortingLayerID: -1883226359
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &2035267419
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035267414}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &2035571897
 GameObject:
   m_ObjectHideFlags: 0
@@ -7649,7 +7708,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1883226359
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c8981fce57918d949a5753820264cd80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7782,9 +7841,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeeType: {fileID: 11400000, guid: f20087bbfdf2deb49a7fdba394cb8db2, type: 2}
-  Collision:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!4 &2062299862
 Transform:
   m_ObjectHideFlags: 0
@@ -7997,6 +8053,7 @@ GameObject:
   - component: {fileID: 2087963734}
   - component: {fileID: 2087963733}
   - component: {fileID: 2087963732}
+  - component: {fileID: 2087963735}
   m_Layer: 0
   m_Name: Workplace UI
   m_TagString: Untagged
@@ -8086,6 +8143,18 @@ Canvas:
   m_SortingLayerID: -1883226359
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &2087963735
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087963730}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &2097801298
 GameObject:
   m_ObjectHideFlags: 0

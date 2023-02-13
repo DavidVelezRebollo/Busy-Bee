@@ -1,4 +1,5 @@
 using GOM.Components.Core;
+using GOM.Components.Sounds;
 using UnityEngine;
 
 namespace GOM.Components.Player
@@ -39,6 +40,7 @@ namespace GOM.Components.Player
 
         public void AddMiss() { 
             _missNumber++;
+            SoundManager.Instance.Play("Error");
 
             if (_missNumber < MaxMisses) return;
 

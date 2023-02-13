@@ -215,4 +215,95 @@ MonoBehaviour:
   GeneralMixerGroup: {fileID: 24300002, guid: 42def552b6697f24d934f041ea0c0299, type: 2}
   MusicMixerGroup: {fileID: 1244126675119267077, guid: 42def552b6697f24d934f041ea0c0299, type: 2}
   SoundEffectsMixerGroup: {fileID: 7915621214094880656, guid: 42def552b6697f24d934f041ea0c0299, type: 2}
-  Sounds: []
+  Sounds:
+  - ClipName: MusicMenu
+    AudioType: 0
+    AudioClip: {fileID: 8300000, guid: 8d4b02a868493b541b607b71ea38bfb9, type: 3}
+    IsLoop: 1
+    PlayOnAwake: 0
+    Volume: 0.3
+    Source: {fileID: 0}
+  - ClipName: MainTheme
+    AudioType: 0
+    AudioClip: {fileID: 8300000, guid: f704e372d8eb3634d8b45fe1fe1d2c61, type: 3}
+    IsLoop: 1
+    PlayOnAwake: 0
+    Volume: 0.3
+    Source: {fileID: 0}
+  - ClipName: Bee1
+    AudioType: 1
+    AudioClip: {fileID: 8300000, guid: e465275002a1e3840a5473c3f90fa033, type: 3}
+    IsLoop: 0
+    PlayOnAwake: 0
+    Volume: 0.1
+    Source: {fileID: 0}
+  - ClipName: Bee2
+    AudioType: 1
+    AudioClip: {fileID: 8300000, guid: b6c3fe17404f72541973833a4645ae8f, type: 3}
+    IsLoop: 0
+    PlayOnAwake: 0
+    Volume: 0.1
+    Source: {fileID: 0}
+  - ClipName: Bee3
+    AudioType: 1
+    AudioClip: {fileID: 8300000, guid: a6bda5d0ad6e82d43b07156374fc348d, type: 3}
+    IsLoop: 0
+    PlayOnAwake: 0
+    Volume: 0.2
+    Source: {fileID: 0}
+  - ClipName: Bee4
+    AudioType: 1
+    AudioClip: {fileID: 8300000, guid: ce97083fbfa659246a19b428865ba929, type: 3}
+    IsLoop: 0
+    PlayOnAwake: 0
+    Volume: 0.2
+    Source: {fileID: 0}
+  - ClipName: Bee5
+    AudioType: 1
+    AudioClip: {fileID: 8300000, guid: 5e70975058d3d164c9b6c5e0db2ff462, type: 3}
+    IsLoop: 0
+    PlayOnAwake: 0
+    Volume: 0.1
+    Source: {fileID: 0}
+  - ClipName: Button
+    AudioType: 1
+    AudioClip: {fileID: 8300000, guid: d1c9cfeb73f867f4dbd2e88b7b337fe2, type: 3}
+    IsLoop: 0
+    PlayOnAwake: 0
+    Volume: 0.3
+    Source: {fileID: 0}
+  - ClipName: Complete
+    AudioType: 1
+    AudioClip: {fileID: 8300000, guid: 133a76b1abdea9248b81f0fd7991f854, type: 3}
+    IsLoop: 0
+    PlayOnAwake: 0
+    Volume: 0.2
+    Source: {fileID: 0}
+  - ClipName: Error
+    AudioType: 1
+    AudioClip: {fileID: 8300000, guid: a693d0654c4d23745b9becbeafd6e7dd, type: 3}
+    IsLoop: 0
+    PlayOnAwake: 0
+    Volume: 0.2
+    Source: {fileID: 0}
+  - ClipName: Lose
+    AudioType: 1
+    AudioClip: {fileID: 8300000, guid: 40fdec89b444822458a5c7cb7fc2118d, type: 3}
+    IsLoop: 0
+    PlayOnAwake: 0
+    Volume: 0.2
+    Source: {fileID: 0}
+  - ClipName: Machine
+    AudioType: 1
+    AudioClip: {fileID: 8300000, guid: ffe988ec8e38bd94a9c4f81c4f067f20, type: 3}
+    IsLoop: 0
+    PlayOnAwake: 0
+    Volume: 0.2
+    Source: {fileID: 0}
+  - ClipName: Win
+    AudioType: 1
+    AudioClip: {fileID: 8300000, guid: 22388143ca6ead845b7ec845e07a0f06, type: 3}
+    IsLoop: 0
+    PlayOnAwake: 0
+    Volume: 0.2
+    Source: {fileID: 0}

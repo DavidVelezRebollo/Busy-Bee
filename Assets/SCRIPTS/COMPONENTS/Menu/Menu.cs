@@ -20,18 +20,20 @@ namespace GOM.Components.Menu {
         /// <summary>
         /// Function that runs when the start button is clicked.
         /// </summary>
-        public void OnStartButton()
-        {
+        public void OnStartButton() {
+            PlayButton();
+
             LoadingScreen.SetActive(true);
             _sceneLoading.Add(SceneManager.UnloadSceneAsync((int) SceneIndexes.MENU));
             _sceneLoading.Add(SceneManager.LoadSceneAsync((int) SceneIndexes.GAME, LoadSceneMode.Additive));
 
             StartCoroutine(loadSceneAsync());
             GameManager.Instance.SetGameState(GameState.Playing);
-            //PlayButton();
         }
 
         public void OnTutorialButton() {
+            PlayButton();
+
             LoadingScreen.SetActive(true);
             _sceneLoading.Add(SceneManager.UnloadSceneAsync((int)SceneIndexes.MENU));
             _sceneLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.TUTORIAL, LoadSceneMode.Additive));
@@ -45,8 +47,8 @@ namespace GOM.Components.Menu {
         /// </summary>
         public void OnExitButton()
         {
+            PlayButton();
             Application.Quit();
-            //PlayButton();
         }
 
         /// <summary>
