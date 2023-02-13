@@ -2,24 +2,26 @@ using GOM.Components.Flowers;
 using GOM.Components.Bees;
 using GOM.Components.Player;
 using GOM.Components.Core;
+using GOM.Shared;
 using UnityEngine;
 
 namespace GOM.Components.Workplaces {
-    public abstract class Workplace : MonoBehaviour {
+    public class Workplace : MonoBehaviour {
         
-        [SerializeField] protected float HoneyProduction;
-        [SerializeField] protected BeeComponent WorkingBee;
-        [SerializeField] protected int NewHoneySprite;
+        [SerializeField] private float HoneyProduction;
+        [SerializeField] private BeeComponent WorkingBee;
+        [SerializeField] private int NewHoneySprite;
+        [SerializeField] private WorkplaceType Type;
 
-        protected PlayerManager _player;
-        protected int Index;
-        protected FlowerComponent CurrentFlower;
-        protected WorkplaceUI UI;
+        private PlayerManager _player;
+        private int _index;
+        private WorkplaceUI _ui;
+        private FlowerComponent _currentFlower;
 
         private bool _withFlower;
 
         private void Start() {
-            UI = GetComponent<WorkplaceUI>();
+            _ui = GetComponent<WorkplaceUI>();
             _player = PlayerManager.Instance;
         }
 
@@ -33,8 +35,8 @@ namespace GOM.Components.Workplaces {
                 return;
             }
 
-            CurrentFlower = collision.GetComponent<FlowerComponent>();
-            CurrentFlower.OnFlowerProccess += TransformPolen;
+            _currentFlower = collision.GetComponent<FlowerComponent>();
+            _currentFlower.OnFlowerProccess += transformPolen;
             _withFlower = true;
             WorkingBee.SetWorkingState(true);
             
@@ -44,16 +46,16 @@ namespace GOM.Components.Workplaces {
             if (!collision.gameObject.CompareTag("Honey") || WorkingBee == null) return;
 
             _withFlower = false;
-            CurrentFlower.OnFlowerProccess -= TransformPolen;
-            CurrentFlower = null;
-            UI.RestartProgressBar();
+            _currentFlower.OnFlowerProccess -= transformPolen;
+            _currentFlower = null;
+            _ui.RestartProgressBar();
             WorkingBee.SetWorkingState(false);
         }
 
         public void Update() {
             if (!_withFlower || GameManager.Instance.GameStop()) return;
             
-            Work();
+            work();
         }
 
         public bool HaveBee() { return WorkingBee != null; }
@@ -62,16 +64,31 @@ namespace GOM.Components.Workplaces {
 
         public BeeComponent GetWorkingBee() { return WorkingBee; }
 
-        public int GetWorkplaceIndex() { return Index; }
+        public int GetWorkplaceIndex() { return _index; }
 
-        public void SetWorkplaceIndex(int index) { Index = index; }
+        public void SetWorkplaceIndex(int index) { _index = index; }
 
-        public void Work() {
-            CurrentFlower.AddProcessTimeElapsed(HoneyProduction * Time.deltaTime);
-            UI.HandleProgressBar(CurrentFlower.GetProccessPercentage());
+        private void work() {
+            bool isEffective = false;
+            int i = 0;
+
+            while (!isEffective && i < WorkingBee.GetEffectiveWorkplaces().Length) {
+                if (WorkingBee.GetEffectiveWorkplaces()[i] == Type) {
+                    isEffective = true;
+                }
+
+                i++;
+            }
+
+            float workSpeed = isEffective ? WorkingBee.GetEffectiveWorkSpeed() : WorkingBee.GetWorkSpeed();
+
+            _currentFlower.AddProcessTimeElapsed(HoneyProduction * workSpeed * Time.deltaTime);
+            _ui.HandleProgressBar(_currentFlower.GetProccessPercentage());
         }
 
-        public abstract void TransformPolen();
+        private void transformPolen() {
+            _currentFlower.ChangeSprite(NewHoneySprite);
+        }
     }
 }
 

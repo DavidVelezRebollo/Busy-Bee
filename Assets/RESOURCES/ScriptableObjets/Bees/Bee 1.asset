@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f158a0ea26384f24b91d2ee80eba3080, type: 3}
   m_Name: Bee 1
   m_EditorClassIdentifier: 
-  name: Bee 1
-  description: This is bee 1
-  beeSprite: {fileID: 0}
-  workSpeed: 1
-  effectiveWorkSpeed: 2
+  Name: 
+  Description: 
+  BeeSprite: {fileID: 0}
+  EffectiveType: 
+  WorkSpeed: 1
+  EffectiveWorkSpeed: 2

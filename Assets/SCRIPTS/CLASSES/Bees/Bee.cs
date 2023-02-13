@@ -1,3 +1,4 @@
+using GOM.Shared;
 using UnityEngine;
 
 namespace GOM.Classes.Bees {
@@ -7,6 +8,8 @@ namespace GOM.Classes.Bees {
         public string Description;
 
         public Sprite BeeSprite;
+
+        public WorkplaceType[] EffectiveWorkplaces;
 
         public int WorkSpeed = 1; 
         public int EffectiveWorkSpeed = 2;

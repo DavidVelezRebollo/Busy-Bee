@@ -1,5 +1,6 @@
 using GOM.Classes.Bees;
 using GOM.Components.Workplaces;
+using GOM.Shared;
 using UnityEngine;
 
 namespace GOM.Components.Bees {
@@ -8,6 +9,7 @@ namespace GOM.Components.Bees {
         [SerializeField] private LayerMask Collision;
 
         private WorkplaceManager _workplaceManager;
+        private SpriteRenderer _renderer;
         private Camera _mainCamera;
         private Vector3 _initialPosition;
         private Vector3 _lastStationPosition;
@@ -18,6 +20,7 @@ namespace GOM.Components.Bees {
         private void Start() {
             _workplaceManager = WorkplaceManager.Instance;
             _mainCamera = Camera.main;
+            _renderer.sprite = BeeType.BeeSprite;
             _initialPosition = transform.position;
             _lastStationPosition = Vector3.zero;
         }
@@ -58,5 +61,11 @@ namespace GOM.Components.Bees {
         }
 
         public void SetWorkingState(bool isWorking) { _isWorking = isWorking; }
+
+        public int GetWorkSpeed() { return BeeType.WorkSpeed; }
+
+        public int GetEffectiveWorkSpeed() { return BeeType.EffectiveWorkSpeed; }
+
+        public WorkplaceType[] GetEffectiveWorkplaces() { return BeeType.EffectiveWorkplaces; }
     }
 }
