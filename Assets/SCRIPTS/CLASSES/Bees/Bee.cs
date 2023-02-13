@@ -11,7 +11,7 @@ namespace GOM.Classes.Bees {
 
         public WorkplaceType[] EffectiveWorkplaces;
 
-        public int WorkSpeed = 1; 
-        public int EffectiveWorkSpeed = 2;
+        public float WorkSpeed = 1; 
+        public float EffectiveWorkSpeed = 2;
     }
 }

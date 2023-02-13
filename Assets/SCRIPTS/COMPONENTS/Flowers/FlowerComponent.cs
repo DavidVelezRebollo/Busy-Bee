@@ -14,6 +14,8 @@ namespace GOM.Components.Flowers {
         [SerializeField] private float Speed; // Speed which the flower will move
 
         public Action OnFlowerProccess;
+        public Action OnFlowerRecollect;
+        public Action OnFlowerMiss;
 
         #endregion
 
@@ -62,6 +64,10 @@ namespace GOM.Components.Flowers {
             _finalType = finalType;
         }
 
+        public HoneyTypes GetFinalType() { return _finalType; }
+
+        public float GetProcessTime() { return FlowerType.ProcessTime; }
+
         #endregion
 
         #region Auxiliar Methods
@@ -79,6 +85,11 @@ namespace GOM.Components.Flowers {
 
         private void recollect() {
             Destroy(gameObject);
+        }
+
+        private void miss() {
+            Destroy(gameObject);
+            OnFlowerMiss?.Invoke();
         }
 
         private IEnumerator wait() {

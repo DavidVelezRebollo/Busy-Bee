@@ -5,6 +5,6 @@ namespace GOM.Classes.Flowers {
     public class Flower : ScriptableObject {
         public string Name;
         public Sprite[] Sprites;
-        public int ProcessTime;
+        public float ProcessTime;
     }
 }

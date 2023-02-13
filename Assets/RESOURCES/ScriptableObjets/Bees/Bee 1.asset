@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: 
   Description: 
   BeeSprite: {fileID: 0}
-  EffectiveType: 
-  WorkSpeed: 1
-  EffectiveWorkSpeed: 2
+  EffectiveWorkplaces: 0300000004000000
+  WorkSpeed: 0.6
+  EffectiveWorkSpeed: 1.2

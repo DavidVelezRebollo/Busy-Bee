@@ -1,4 +1,4 @@
-using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using GOM.Components.Core;
 using GOM.Components.Player;
@@ -29,7 +29,7 @@ namespace GOM.Components.UI {
         private GameManager _gameManager;
         private PlayerManager _player;
         private Timer _gameTimer;
-        private Queue _nextHoneys = new Queue();
+        private Queue<FlowerComponent> _nextHoneys = new Queue<FlowerComponent>();
         private int _currentFlowerIndex;
 
         private void Start() {
@@ -70,7 +70,23 @@ namespace GOM.Components.UI {
         }
 
         private void ShowNextFlower(FlowerComponent flower) {
-            
+            _nextHoneys.Enqueue(flower);
+            flower.OnFlowerMiss += ChangeCurrentFlower;
+            flower.OnFlowerRecollect += ChangeCurrentFlower;
+
+            if (_currentFlowerIndex > 3) return;
+
+            NextHoney[_currentFlowerIndex].color = new Color(1f, 1f, 1f, 1f);
+            NextHoney[_currentFlowerIndex].sprite = HoneyIcons[(int) _nextHoneys.Peek().GetFinalType()];
+            _currentFlowerIndex++;
+        }
+
+        private void ChangeCurrentFlower() {
+            for(int i = 0; i < NextHoney.Length - 1; i++) 
+                NextHoney[i].sprite = NextHoney[i + 1].sprite;
+
+            _nextHoneys.Dequeue();
+            _currentFlowerIndex--;
         }
     }
 }

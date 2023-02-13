@@ -922,7 +922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoneyProduction: 1
   WorkingBee: {fileID: 0}
   NewHoneySprite: 5
   Type: 4
@@ -1097,7 +1096,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoneyProduction: 1
   WorkingBee: {fileID: 0}
   NewHoneySprite: 4
   Type: 3
@@ -1311,7 +1309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoneyProduction: 1
   WorkingBee: {fileID: 2062299861}
   NewHoneySprite: 0
   Type: 0
@@ -3304,7 +3301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c012bd961e654934d81981782e2b33a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Workplace: {fileID: 0}
+  Workplace: {fileID: 2016034890}
 --- !u!1 &1151248505
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,7 +3508,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1424130201}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3531,14 +3528,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 63fcc39962c9c60499234da7440ee42a, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3684,14 +3681,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 63fcc39962c9c60499234da7440ee42a, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4670,8 +4667,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1186389081}
   - {fileID: 1604823387}
+  - {fileID: 1186389081}
   - {fileID: 1748336737}
   - {fileID: 1206721210}
   m_Father: {fileID: 0}
@@ -4817,7 +4814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa0349cdb8eb05647a202316a4ce7217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxMisses: 0
+  MaxMisses: 3
 --- !u!4 &1476350450
 Transform:
   m_ObjectHideFlags: 0
@@ -5427,7 +5424,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1424130201}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5690,7 +5687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoneyProduction: 1
   WorkingBee: {fileID: 147212628}
   NewHoneySprite: 1
   Type: 1
@@ -6077,14 +6073,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 63fcc39962c9c60499234da7440ee42a, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6466,7 +6462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoneyProduction: 1
   WorkingBee: {fileID: 1949214427}
   NewHoneySprite: 2
   Type: 2
@@ -7024,7 +7019,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 711d87edf6a69b0499c0197da110ce83, type: 3}
   - {fileID: 21300000, guid: 63fcc39962c9c60499234da7440ee42a, type: 3}
   - {fileID: 21300000, guid: 15bb02a98f7781444b878d41ca3b63b7, type: 3}
-  NextHoney: {fileID: 1186389082}
+  NextHoney:
+  - {fileID: 1186389082}
+  - {fileID: 1748336738}
+  - {fileID: 1206721211}
 --- !u!114 &2000161942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7275,10 +7273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoneyProduction: 1
   WorkingBee: {fileID: 0}
   NewHoneySprite: 3
-  Type: 0
+  Type: 3
 --- !u!1 &2035267414
 GameObject:
   m_ObjectHideFlags: 0
@@ -7508,7 +7505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c012bd961e654934d81981782e2b33a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Workplace: {fileID: 0}
+  Workplace: {fileID: 365012728}
 --- !u!1 &2061556772
 GameObject:
   m_ObjectHideFlags: 0

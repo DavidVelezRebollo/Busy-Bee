@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FlowerType: {fileID: 11400000, guid: 78826876c5b97624da4b387e854f914c, type: 2}
-  Speed: 3
+  Speed: 1
 --- !u!1 &6475370321178023022
 GameObject:
   m_ObjectHideFlags: 0

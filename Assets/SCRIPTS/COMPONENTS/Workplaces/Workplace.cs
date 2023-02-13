@@ -8,7 +8,6 @@ using UnityEngine;
 namespace GOM.Components.Workplaces {
     public class Workplace : MonoBehaviour {
         
-        [SerializeField] private float HoneyProduction;
         [SerializeField] private BeeComponent WorkingBee;
         [SerializeField] private int NewHoneySprite;
         [SerializeField] private WorkplaceType Type;
@@ -82,7 +81,7 @@ namespace GOM.Components.Workplaces {
 
             float workSpeed = isEffective ? WorkingBee.GetEffectiveWorkSpeed() : WorkingBee.GetWorkSpeed();
 
-            _currentFlower.AddProcessTimeElapsed(HoneyProduction * workSpeed * Time.deltaTime);
+            _currentFlower.AddProcessTimeElapsed(workSpeed * Time.deltaTime);
             _ui.HandleProgressBar(_currentFlower.GetProccessPercentage());
         }
 

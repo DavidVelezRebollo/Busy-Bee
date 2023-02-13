@@ -62,9 +62,9 @@ namespace GOM.Components.Bees {
 
         public void SetWorkingState(bool isWorking) { _isWorking = isWorking; }
 
-        public int GetWorkSpeed() { return BeeType.WorkSpeed; }
+        public float GetWorkSpeed() { return BeeType.WorkSpeed; }
 
-        public int GetEffectiveWorkSpeed() { return BeeType.EffectiveWorkSpeed; }
+        public float GetEffectiveWorkSpeed() { return BeeType.EffectiveWorkSpeed; }
 
         public WorkplaceType[] GetEffectiveWorkplaces() { return BeeType.EffectiveWorkplaces; }
     }
