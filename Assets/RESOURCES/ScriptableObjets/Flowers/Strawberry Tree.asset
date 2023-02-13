@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Strawberry Tree
   m_EditorClassIdentifier: 
   Name: "Magadro\xF1a"
-  Sprite: {fileID: 0}
+  Sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ProcessTime: 6

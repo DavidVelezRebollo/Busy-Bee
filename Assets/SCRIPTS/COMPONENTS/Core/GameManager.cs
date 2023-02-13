@@ -41,7 +41,7 @@ namespace GOM.Components.Core {
         #region Unity Events
 
         private void Start() {
-            _state = GameState.Menu;
+            _state = !DebugMode ? GameState.Menu : GameState.Playing;
             if (!DebugMode) {
                 StartCoroutine(LoadSceneAsync((int) SceneIndexes.MENU));
             }

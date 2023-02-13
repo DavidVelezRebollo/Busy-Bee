@@ -6,22 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="186df52b-20c7-4a36-a577-bc9688336458" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamegen-Jam-Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gamegen-Jam-Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RESOURCES/ScriptableObjets/Bees/Bee 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RESOURCES/ScriptableObjets/Bees/Bee 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/CLASSES/Bees/Bee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCRIPTS/CLASSES/Bees/Bee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EXTERNAL/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EXTERNAL/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EXTERNAL/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EXTERNAL/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RESOURCES/Art/UI/square-16.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RESOURCES/Art/UI/square-16.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCENES/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCENES/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCENES/Shared.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCENES/Shared.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCENES/Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCENES/Tutorial.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Bees/BeeComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Bees/BeeComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Types.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Types/Bottling.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Types/Bottling.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Types/Cover.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Types/Cover.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Types/Crush.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Types/Crush.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Types/Mix.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Types/Mix.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Types/Polen.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Types/Polen.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Workplace.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Workplaces/Workplace.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Core/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Honey/HoneyGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Honey/HoneyGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/UI/HUDManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/UI/HUDManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/SCRIPTS/SHARED/HoneyTypes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SCRIPTS/SHARED/WorkplaceType.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -93,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676118814989</updated>
       <workItem from="1676118824189" duration="3000" />
-      <workItem from="1676290423373" duration="1154000" />
+      <workItem from="1676290423373" duration="3862000" />
     </task>
     <servers />
   </component>

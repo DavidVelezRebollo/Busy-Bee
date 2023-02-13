@@ -20,7 +20,7 @@ namespace GOM.Components.Bees {
         private void Start() {
             _workplaceManager = WorkplaceManager.Instance;
             _mainCamera = Camera.main;
-            _renderer.sprite = BeeType.BeeSprite;
+            //_renderer.sprite = BeeType.BeeSprite;
             _initialPosition = transform.position;
             _lastStationPosition = Vector3.zero;
         }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8251820794204236908}
   - component: {fileID: 3955507572924590453}
   m_Layer: 0
-  m_Name: Flower
+  m_Name: Strawberry Tree
   m_TagString: Honey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f64adf70cf4bc41aa8360158c45d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlowerType: {fileID: 11400000, guid: 83c8d47a997f784429ff72e31167b714, type: 2}
+  FlowerType: {fileID: 11400000, guid: 78826876c5b97624da4b387e854f914c, type: 2}
   Speed: 3
 --- !u!1 &6475370321178023022
 GameObject:
@@ -148,7 +148,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.5801887, b: 0.7920433, a: 1}
+  m_Color: {r: 0.21897209, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
