@@ -3811,7 +3811,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.99149597, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5203,7 +5203,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.99149597, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7015,10 +7015,10 @@ MonoBehaviour:
   BeeImage: {fileID: 0}
   BeeSprites: []
   HoneyIcons:
-  - {fileID: 21300000, guid: 4de8c4776c75b6e458a8ed21ebfd7e7b, type: 3}
-  - {fileID: 21300000, guid: 711d87edf6a69b0499c0197da110ce83, type: 3}
   - {fileID: 21300000, guid: 63fcc39962c9c60499234da7440ee42a, type: 3}
   - {fileID: 21300000, guid: 15bb02a98f7781444b878d41ca3b63b7, type: 3}
+  - {fileID: 21300000, guid: 4de8c4776c75b6e458a8ed21ebfd7e7b, type: 3}
+  - {fileID: 21300000, guid: 711d87edf6a69b0499c0197da110ce83, type: 3}
   NextHoney:
   - {fileID: 1186389082}
   - {fileID: 1748336738}
@@ -7451,7 +7451,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.99149597, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

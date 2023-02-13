@@ -18,9 +18,11 @@ namespace GOM.Components.Bees {
         private bool _isWorking;
 
         private void Start() {
+            _renderer = GetComponentInChildren<SpriteRenderer>();
+
             _workplaceManager = WorkplaceManager.Instance;
             _mainCamera = Camera.main;
-            //_renderer.sprite = BeeType.BeeSprite;
+            _renderer.sprite = BeeType.BeeSprite;
             _initialPosition = transform.position;
             _lastStationPosition = Vector3.zero;
         }
@@ -43,6 +45,7 @@ namespace GOM.Components.Bees {
             }
 
             transform.position = _lastStationPosition;
+            _initialPosition = _lastStationPosition;
             _workplaceManager.SetBee(this, _lastWorkplace);
         }
 

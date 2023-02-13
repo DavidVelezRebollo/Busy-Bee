@@ -38,11 +38,10 @@ namespace GOM.Components.Honey {
         }
 
         private void generateFlower() {
-            int nextFlower = 0;
+            int nextFlower;
             HoneyTypes finalType;
 
             nextFlower = Random.Range(0f, 1f) < 0.5 ? 0 : 1;
-
 
             if (nextFlower == 0)
                 finalType = Random.Range(0f, 1f) < 0.5 ? HoneyTypes.SweetSmall : HoneyTypes.SweetBig;
