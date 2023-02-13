@@ -6,17 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="186df52b-20c7-4a36-a577-bc9688336458" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamegen-Jam-Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gamegen-Jam-Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EXTERNAL/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EXTERNAL/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EXTERNAL/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EXTERNAL/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RESOURCES/Art/UI/square-16.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RESOURCES/Art/UI/square-16.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCENES/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCENES/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCENES/Shared.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCENES/Shared.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SCENES/Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCENES/Tutorial.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Bees/BeeComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Bees/BeeComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Core/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Flowers/FlowerComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Flowers/FlowerComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Honey/HoneyGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/Honey/HoneyGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/UI/HUDManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SCRIPTS/COMPONENTS/UI/HUDManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676118814989</updated>
       <workItem from="1676118824189" duration="3000" />
-      <workItem from="1676290423373" duration="3862000" />
+      <workItem from="1676290423373" duration="4837000" />
     </task>
     <servers />
   </component>

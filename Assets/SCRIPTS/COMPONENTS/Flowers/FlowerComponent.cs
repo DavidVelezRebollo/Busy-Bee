@@ -1,6 +1,7 @@
 using GOM.Components.Honey;
 using GOM.Classes.Flowers;
 using GOM.Components.Core;
+using GOM.Shared;
 using UnityEngine;
 using System.Collections;
 using System;
@@ -20,6 +21,7 @@ namespace GOM.Components.Flowers {
 
         private SpriteRenderer _renderer;
         private HoneyWaypoint _nextWaypoint; // Waypoint that the flower will follow
+        private HoneyTypes _finalType;
         private int _currentWaypoint = 0;
         private float _processTimeElapsed = 0; //Time that has been processed (seconds)
         private bool _waiting = false;
@@ -55,6 +57,10 @@ namespace GOM.Components.Flowers {
         public float GetProccessPercentage() { return _processTimeElapsed / FlowerType.ProcessTime; }
 
         public void ChangeSprite(int spriteIndex) { _renderer.sprite = FlowerType.Sprites[spriteIndex]; }
+
+        public void SetFinalType(HoneyTypes finalType) {
+            _finalType = finalType;
+        }
 
         #endregion
 

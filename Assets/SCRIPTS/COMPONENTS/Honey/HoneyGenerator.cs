@@ -1,5 +1,7 @@
 using System;
 using GOM.Classes.UI;
+using GOM.Components.Flowers;
+using GOM.Shared;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,7 +13,7 @@ namespace GOM.Components.Honey {
         [SerializeField] private GameObject[] FlowerPrefabs;
         [SerializeField] private TextMeshProUGUI NextFlowerTime;
 
-        public static Action<int> OnFlowerGeneration;
+        public static Action<FlowerComponent> OnFlowerGeneration;
 
         private static Timer _timer; // Timer that counts the time between flowers
         private bool _firstGeneration = true; // Checks if is the first time generating a flower
@@ -37,11 +39,20 @@ namespace GOM.Components.Honey {
 
         private void generateFlower() {
             int nextFlower = 0;
+            HoneyTypes finalType;
 
             nextFlower = Random.Range(0f, 1f) < 0.5 ? 0 : 1;
-            
-            Instantiate(FlowerPrefabs[nextFlower], transform.position, Quaternion.identity);
-            OnFlowerGeneration?.Invoke(nextFlower);
+
+
+            if (nextFlower == 0)
+                finalType = Random.Range(0f, 1f) < 0.5 ? HoneyTypes.SweetSmall : HoneyTypes.SweetBig;
+            else
+                finalType = Random.Range(0f, 1f) < 0.5 ? HoneyTypes.SourSmall : HoneyTypes.SourBig;
+
+            GameObject flower = Instantiate(FlowerPrefabs[nextFlower], transform.position, Quaternion.identity);
+            FlowerComponent component = flower.GetComponent<FlowerComponent>();
+            component.SetFinalType(finalType);
+            OnFlowerGeneration?.Invoke(component);
         }
     }
 }

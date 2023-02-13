@@ -1,8 +1,10 @@
+using System.Collections;
 using TMPro;
 using GOM.Components.Core;
 using GOM.Components.Player;
 using GOM.Components.Honey;
 using GOM.Classes.UI;
+using GOM.Components.Flowers;
 using GOM.Shared;
 using UnityEngine.UI;
 using UnityEngine;
@@ -22,11 +24,13 @@ namespace GOM.Components.UI {
         [SerializeField] Sprite[] BeeSprites;
         [Space(10)] [Header("Game UI Elements")] 
         [SerializeField] private Sprite[] HoneyIcons;
-        [SerializeField] private Image NextHoney;
+        [SerializeField] private Image[] NextHoney;
 
         private GameManager _gameManager;
         private PlayerManager _player;
         private Timer _gameTimer;
+        private Queue _nextHoneys = new Queue();
+        private int _currentFlowerIndex;
 
         private void Start() {
             _gameManager = GameManager.Instance;
@@ -65,13 +69,7 @@ namespace GOM.Components.UI {
             CompletedHiveText.text = _player.GetCompletedHives().ToString();
         }
 
-        private void ShowNextFlower(int index) {
-            bool big = Random.Range(0f, 1f) < 0.5;
-
-            if (index == 0) 
-                NextHoney.sprite = big ? HoneyIcons[(int)HoneyTypes.SweetBig] : HoneyIcons[(int)HoneyTypes.SweetSmall];
-            else
-                NextHoney.sprite = big ? HoneyIcons[(int)HoneyTypes.SourBig] : HoneyIcons[(int)HoneyTypes.SourSmall];
+        private void ShowNextFlower(FlowerComponent flower) {
             
         }
     }
