@@ -77,6 +77,6 @@ namespace GOM.Components.Bees {
 
         public float GetEffectiveWorkSpeed() { return BeeType.EffectiveWorkSpeed; }
 
-        public WorkplaceType[] GetEffectiveWorkplaces() { return BeeType.EffectiveWorkplaces; }
+        public WorkplaceType GetEffectiveWorkplace() { return BeeType.EffectiveWorkplace; }
     }
 }

@@ -16,6 +16,6 @@ MonoBehaviour:
   Description: 
   SFX: Bee2
   BeeSprite: {fileID: 21300000, guid: fc07d745e24f7d742afa45990e1f6070, type: 3}
-  EffectiveWorkplaces: 0000000003000000
+  EffectiveWorkplace: 1
   WorkSpeed: 0.6
   EffectiveWorkSpeed: 1.2

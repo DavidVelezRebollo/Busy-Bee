@@ -10,7 +10,7 @@ namespace GOM.Classes.Bees {
 
         public Sprite BeeSprite;
 
-        public WorkplaceType[] EffectiveWorkplaces;
+        public WorkplaceType EffectiveWorkplace;
 
         public float WorkSpeed = 1; 
         public float EffectiveWorkSpeed = 2;

@@ -72,14 +72,9 @@ namespace GOM.Components.Workplaces {
 
         private void work() {
             bool isEffective = false;
-            int i = 0;
 
-            while (!isEffective && i < WorkingBee.GetEffectiveWorkplaces().Length) {
-                if (WorkingBee.GetEffectiveWorkplaces()[i] == Type) {
-                    isEffective = true;
-                }
-
-                i++;
+            if (WorkingBee.GetEffectiveWorkplace() == Type) {
+                isEffective = true;
             }
 
             float workSpeed = isEffective ? WorkingBee.GetEffectiveWorkSpeed() : WorkingBee.GetWorkSpeed();
