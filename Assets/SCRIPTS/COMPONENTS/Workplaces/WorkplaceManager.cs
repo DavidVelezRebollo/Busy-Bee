@@ -49,5 +49,29 @@ namespace GOM.Components.Workplaces {
 
             Workplaces[index].SetWorkingBee(bee);
         }
+
+        public void DeleteBee(BeeComponent bee)
+        {
+            foreach (Workplace w in Workplaces)
+            {
+                if (w.GetWorkingBee() == bee)
+                {
+                    w.SetWorkingBee(null);
+                    return;
+                }
+            }
+        }
+
+        public void AddBee(BeeComponent bee)
+        {
+            foreach (Workplace w in Workplaces)
+            {
+                if (w.GetWorkingBee() == null)
+                {
+                    w.SetWorkingBee(bee);
+                    return;
+                }
+            }
+        }
     }
 }

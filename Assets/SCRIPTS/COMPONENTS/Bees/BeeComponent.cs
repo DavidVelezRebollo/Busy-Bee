@@ -27,6 +27,7 @@ namespace GOM.Components.Bees {
             _lastStationPosition = Vector3.zero;
         }
 
+
         private void OnMouseDown() {
             if (_isWorking) return;
 
@@ -78,5 +79,7 @@ namespace GOM.Components.Bees {
         public float GetEffectiveWorkSpeed() { return BeeType.EffectiveWorkSpeed; }
 
         public WorkplaceType GetEffectiveWorkplace() { return BeeType.EffectiveWorkplace; }
+
+        public bool IsWorking() { return _isWorking; }
     }
 }
