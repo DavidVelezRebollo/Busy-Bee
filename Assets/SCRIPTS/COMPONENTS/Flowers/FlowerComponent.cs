@@ -118,7 +118,6 @@ namespace GOM.Components.Flowers {
             getNextWaypoint();
 
             _soundManager.Stop("Machine");
-            _soundManager.Play("Complete");
 
             OnFlowerProccess?.Invoke();
             _waiting = false;

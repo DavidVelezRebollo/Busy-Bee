@@ -114,6 +114,7 @@ namespace GOM.Components.Workplaces {
                 _currentFlower.ChangeCurrentBottle(Type == WorkplaceType.BigBottiling ? BottleType.Big : BottleType.Small);
             
             _currentFlower.ChangeSprite(_currentFlower.GetCurrentBottle() == BottleType.Small ? NewHoneySprite + 1 : NewHoneySprite);
+            _soundManager.Play("Complete");
         }
     }
 }

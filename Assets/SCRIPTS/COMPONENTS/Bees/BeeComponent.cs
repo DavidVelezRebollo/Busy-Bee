@@ -14,6 +14,7 @@ namespace GOM.Components.Bees {
         private Camera _mainCamera;
         private Vector3 _initialPosition;
         private Vector3 _lastStationPosition;
+        private int _intiialSortingOrder;
         private int _lastWorkplaceIndex;
         private int _sortingOrder;
         private bool _isMoving;
@@ -27,6 +28,7 @@ namespace GOM.Components.Bees {
             _mainCamera = Camera.main;
             _renderer.sprite = BeeType.BeeSprite;
             _initialPosition = transform.position;
+            _intiialSortingOrder = _renderer.sortingOrder;
             _lastStationPosition = Vector3.zero;
         }
 
@@ -56,6 +58,7 @@ namespace GOM.Components.Bees {
 
             if (_lastStationPosition == Vector3.zero) {
                 transform.position = _initialPosition;
+                _renderer.sortingOrder = _intiialSortingOrder;
                 return;
             }
 
