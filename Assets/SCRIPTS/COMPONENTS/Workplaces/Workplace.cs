@@ -9,6 +9,7 @@ using UnityEngine;
 namespace GOM.Components.Workplaces {
     public class Workplace : MonoBehaviour {
         
+        [SerializeField] private SpriteRenderer Sprite;
         [SerializeField] private BeeComponent WorkingBee;
         [SerializeField] private int NewHoneySprite;
         [SerializeField] private WorkplaceType Type;
@@ -48,7 +49,7 @@ namespace GOM.Components.Workplaces {
             if (!collision.gameObject.CompareTag("Honey") || WorkingBee == null) return;
 
             _withFlower = false;
-            if (_currentFlower != null) { 
+            if (_currentFlower != null) {
                 _currentFlower.OnFlowerProccess -= transformPolen; 
                 _currentFlower = null;
             }
