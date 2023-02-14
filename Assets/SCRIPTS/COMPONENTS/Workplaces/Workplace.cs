@@ -48,8 +48,10 @@ namespace GOM.Components.Workplaces {
             if (!collision.gameObject.CompareTag("Honey") || WorkingBee == null) return;
 
             _withFlower = false;
-            _currentFlower.OnFlowerProccess -= transformPolen;
-            _currentFlower = null;
+            if (_currentFlower != null) { 
+                _currentFlower.OnFlowerProccess -= transformPolen; 
+                _currentFlower = null;
+            }
             _ui.RestartProgressBar();
             WorkingBee.SetWorkingState(false);
         }

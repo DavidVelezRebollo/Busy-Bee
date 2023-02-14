@@ -29,7 +29,7 @@ namespace GOM.Components.UI {
         private GameManager _gameManager;
         private PlayerManager _player;
         private Timer _gameTimer;
-        private GameObject[] _hives;
+        private List<GameObject> _hives = new List<GameObject>();
         private List<FlowerComponent> _nextHoneys = new List<FlowerComponent>();
         private int _currentFlowerIndex;
 
@@ -38,7 +38,7 @@ namespace GOM.Components.UI {
             _player = PlayerManager.Instance;
             
             for(int i = 0; i < FinalHive.transform.childCount; i++) {
-                _hives[i] = FinalHive.transform.GetChild(i).gameObject;
+                _hives.Add(FinalHive.transform.GetChild(i).gameObject);
             }
 
             _gameTimer = new Timer(0, 0);
