@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Honey
   - BeeStation
+  - FirstWaypoint
   layers:
   - Default
   - TransparentFX

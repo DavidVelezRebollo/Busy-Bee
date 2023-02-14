@@ -3,6 +3,7 @@ using GOM.Components.Bees;
 using GOM.Components.Player;
 using GOM.Components.Core;
 using GOM.Components.Sounds;
+using GOM.Components.Honey;
 using GOM.Shared;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace GOM.Components.Workplaces {
         
         [SerializeField] private SpriteRenderer Sprite;
         [SerializeField] private BeeComponent WorkingBee;
+        [SerializeField] private FlowerLever Lever;
         [SerializeField] private int NewHoneySprite;
         [SerializeField] private WorkplaceType Type;
 
@@ -90,6 +92,16 @@ namespace GOM.Components.Workplaces {
         }
 
         private void transformPolen() {
+            if(Lever != null) {
+                if((Lever.OnLavander() && _currentFlower.GetType() != FlowerType.Lavander) ||
+                    (!Lever.OnLavander() && _currentFlower.GetType() != FlowerType.StrawberryTree)) {
+                    _currentFlower.Miss();
+                    _player.AddMiss();
+                    _withFlower = false;
+                    return;
+                }
+            }
+
             _currentFlower.ChangeSprite(NewHoneySprite);
             _soundManager.Pause("Machine");
             _soundManager.Play("Complete");

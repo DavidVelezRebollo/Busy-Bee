@@ -2,19 +2,24 @@ using UnityEngine;
 
 namespace GOM.Components.Honey {
     public class Lever : MonoBehaviour {
+        [Tooltip("The Waypoint attached to the lever")]
+        [SerializeField] private HoneyWaypoint LeverWaypoint;
         [Tooltip("First path which the lever will enable or disable")]
-        [SerializeField] private GameObject FirstPath;
+        [SerializeField] private HoneyWaypoint FirstPath;
         [Tooltip("Second path which the lever will enable or disable")]
-        [SerializeField] private GameObject SecondPath;
+        [SerializeField] private HoneyWaypoint SecondPath;
+
+        private bool _firstPath = true;
 
         private void OnMouseDown() {
             if (FirstPath.GetComponent<HoneyWaypoint>().FlowerComing() ||
                 SecondPath.GetComponent<HoneyWaypoint>().FlowerComing()) return;
 
-            FirstPath.SetActive(!FirstPath.activeInHierarchy);
-            SecondPath.SetActive(!SecondPath.activeInHierarchy);
+            _firstPath = !_firstPath;
 
-            transform.localRotation = Quaternion.Euler(0f, 0f, FirstPath.activeInHierarchy ? -25f : 25f);
+            LeverWaypoint.SetNextWaypoint(_firstPath ? FirstPath : SecondPath);
+
+            transform.localRotation = Quaternion.Euler(0f, 0f, _firstPath ? -25f : 25f);
         }
 
     }

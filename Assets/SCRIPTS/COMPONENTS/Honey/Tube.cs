@@ -24,7 +24,6 @@ namespace GOM.Components.Honey {
 
             Honey.fillAmount = 0f;
             Honey.fillOrigin = IsHorizontal ? (int)Image.OriginHorizontal.Right : (int)Image.OriginVertical.Bottom;
-            collision.gameObject.SetActive(false);
 
             _isFilling = true;
         }
@@ -32,7 +31,6 @@ namespace GOM.Components.Honey {
         private void OnTriggerExit2D(Collider2D collision) {
             if (!collision.CompareTag("Honey")) return;
 
-            collision.gameObject.SetActive(true);
             Honey.fillOrigin = IsHorizontal ? (int)Image.OriginHorizontal.Left : (int)Image.OriginVertical.Top;
             _isFilling = false;
         }

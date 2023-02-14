@@ -23,7 +23,6 @@ namespace GOM.Components.Flowers {
         private SpriteRenderer _renderer;
         private HoneyWaypoint _nextWaypoint; // Waypoint that the flower will follow
         private HoneyTypes _finalType;
-        private int _currentWaypoint = 0;
         private float _processTimeElapsed = 0; //Time that has been processed (seconds)
         private bool _waiting = false;
 
@@ -33,7 +32,7 @@ namespace GOM.Components.Flowers {
 
         private void Start() {
             _renderer = GetComponentInChildren<SpriteRenderer>();
-            _nextWaypoint = HoneyPath.GetWaypoint(_currentWaypoint);
+            _nextWaypoint = GameObject.FindGameObjectWithTag("FirstWaypoint").GetComponent<HoneyWaypoint>();
         }
 
         private void Update() {
@@ -66,19 +65,19 @@ namespace GOM.Components.Flowers {
 
         public float GetProcessTime() { return FlowerType.ProcessTime; }
 
+        public FlowerType GetType() { return FlowerType.Type; }
+
         #endregion
 
         #region Auxiliar Methods
 
         private void getNextWaypoint() {
-            if(_currentWaypoint >= HoneyPath.WaypointCount()) {
+            if(_nextWaypoint.GetNextWaypoint() == null) {
                 recollect();
                 return;
             }
 
-            _currentWaypoint += HoneyPath.WaypointEnabled(_currentWaypoint + 1) ? 1 : 4;
-
-            _nextWaypoint = HoneyPath.GetWaypoint(_currentWaypoint);
+            _nextWaypoint = _nextWaypoint.GetNextWaypoint();
         }
 
         private void recollect() {

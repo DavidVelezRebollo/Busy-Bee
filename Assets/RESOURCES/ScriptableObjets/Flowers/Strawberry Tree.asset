@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acffd6ef5c2a5fd4cb018e22fa0bd532, type: 3}
   m_Name: Strawberry Tree
   m_EditorClassIdentifier: 
-  Name: "Magadro\xF1a"
+  Type: 1
   Sprites:
   - {fileID: 21300000, guid: 4c4aa3b6b34f1fb4590f9ab5afdcbfcf, type: 3}
   - {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}

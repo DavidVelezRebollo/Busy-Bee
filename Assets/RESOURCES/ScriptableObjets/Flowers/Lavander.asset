@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acffd6ef5c2a5fd4cb018e22fa0bd532, type: 3}
-  m_Name: Romero
+  m_Name: Lavander
   m_EditorClassIdentifier: 
   Name: Romero
   Sprites:
