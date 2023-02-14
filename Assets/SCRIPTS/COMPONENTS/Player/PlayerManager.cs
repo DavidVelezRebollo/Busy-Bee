@@ -18,6 +18,7 @@ namespace GOM.Components.Player
         #endregion
 
         [SerializeField] private int MaxMisses;
+        [SerializeField] private int HivesToComplete;
 
         private int[] _honeyCount;
         private int _completedHives = 0;
@@ -28,7 +29,15 @@ namespace GOM.Components.Player
             _honeyCount = new int[] { 0, 0 };
         }
 
-        #region Getters
+        private void Update() {
+            if (_completedHives != HivesToComplete) return;
+
+            GameManager.Instance.SetGameState(GameState.Won);
+        }
+
+        #region Getters & Setters
+
+        public void AddCompleteHive() { _completedHives++; }
 
         public int GetHoneyCount (int index) { return _honeyCount[index]; }
 

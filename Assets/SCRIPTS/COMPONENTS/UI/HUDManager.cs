@@ -5,7 +5,6 @@ using GOM.Components.Player;
 using GOM.Components.Honey;
 using GOM.Classes.UI;
 using GOM.Components.Flowers;
-using GOM.Shared;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -25,16 +24,23 @@ namespace GOM.Components.UI {
         [Space(10)] [Header("Game UI Elements")] 
         [SerializeField] private Sprite[] HoneyIcons;
         [SerializeField] private Image[] NextHoney;
+        [SerializeField] private GameObject FinalHive;
 
         private GameManager _gameManager;
         private PlayerManager _player;
         private Timer _gameTimer;
+        private GameObject[] _hives;
         private List<FlowerComponent> _nextHoneys = new List<FlowerComponent>();
         private int _currentFlowerIndex;
 
         private void Start() {
             _gameManager = GameManager.Instance;
             _player = PlayerManager.Instance;
+            
+            for(int i = 0; i < FinalHive.transform.childCount; i++) {
+                _hives[i] = FinalHive.transform.GetChild(i).gameObject;
+            }
+
             _gameTimer = new Timer(0, 0);
             HoneyGenerator.OnFlowerGeneration += ShowNextFlower;
         }
@@ -71,8 +77,7 @@ namespace GOM.Components.UI {
 
         private void ShowNextFlower(FlowerComponent flower) {
             _nextHoneys.Add(flower);
-            flower.OnFlowerMiss += ChangeCurrentFlower;
-            flower.OnFlowerRecollect += ChangeCurrentFlower;
+            flower.OnFlowerFinal += ChangeCurrentFlower;
 
             if (_currentFlowerIndex > 3) return;
 
@@ -81,13 +86,18 @@ namespace GOM.Components.UI {
             _currentFlowerIndex++;
         }
 
-        private void ChangeCurrentFlower() {
+        private void ChangeCurrentFlower(bool isMiss) {
             for(int i = 0; i < _nextHoneys.Count - 1; i++) {
                 NextHoney[i].sprite = NextHoney[i + 1].sprite;
             }
 
             NextHoney[_currentFlowerIndex - 1].color = new Color(1f, 1f, 1f, 0f);
             _nextHoneys.RemoveAt(--_currentFlowerIndex);
+
+            if (isMiss) return;
+
+            _hives[_player.GetCompletedHives()].SetActive(true);
+            _player.AddCompleteHive();
         }
     }
 }

@@ -14,8 +14,7 @@ namespace GOM.Components.Flowers {
         [SerializeField] private float Speed; // Speed which the flower will move
 
         public Action OnFlowerProccess;
-        public Action OnFlowerRecollect;
-        public Action OnFlowerMiss;
+        public Action<bool> OnFlowerFinal;
 
         #endregion
 
@@ -84,12 +83,12 @@ namespace GOM.Components.Flowers {
 
         private void recollect() {
             Destroy(gameObject);
-            OnFlowerRecollect?.Invoke();
+            OnFlowerFinal?.Invoke(false);
         }
 
         public void Miss() {
             Destroy(gameObject);
-            OnFlowerMiss?.Invoke();
+            OnFlowerFinal?.Invoke(true);
         }
 
         private IEnumerator wait() {
