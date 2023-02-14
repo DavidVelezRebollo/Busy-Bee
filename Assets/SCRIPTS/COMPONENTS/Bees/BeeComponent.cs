@@ -9,13 +9,16 @@ namespace GOM.Components.Bees {
         [SerializeField] private Bee BeeType;
 
         private WorkplaceManager _workplaceManager;
+        private Workplace _lastWorkplace;
         private SpriteRenderer _renderer;
         private Camera _mainCamera;
         private Vector3 _initialPosition;
         private Vector3 _lastStationPosition;
-        private int _lastWorkplace;
+        private int _lastWorkplaceIndex;
+        private int _sortingOrder;
         private bool _isMoving;
         private bool _isWorking;
+        private bool _flip;
 
         private void Start() {
             _renderer = GetComponentInChildren<SpriteRenderer>();
@@ -42,6 +45,9 @@ namespace GOM.Components.Bees {
             Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
             transform.position = new Vector3(mousePosition.x, mousePosition.y);
+            _renderer.sortingOrder = 10;
+            _sortingOrder = _lastWorkplace == null ? 10 : _lastWorkplace.GetBeePostSortingLayer();
+            _flip = _lastWorkplace == null ? false : _lastWorkplace.Flip();
             _isMoving = true;
         }
 
@@ -55,7 +61,11 @@ namespace GOM.Components.Bees {
 
             transform.position = _lastStationPosition;
             _initialPosition = _lastStationPosition;
-            _workplaceManager.SetBee(this, _lastWorkplace);
+
+            _renderer.sortingOrder = _sortingOrder;
+            _renderer.flipX = _flip;
+
+            _workplaceManager.SetBee(this, _lastWorkplaceIndex);
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
@@ -63,13 +73,15 @@ namespace GOM.Components.Bees {
             if (collision.GetComponentInParent<Workplace>().HaveBee()) return;
 
             _lastStationPosition = collision.transform.position;
-            _lastWorkplace = collision.GetComponentInParent<Workplace>().GetWorkplaceIndex();
+            _lastWorkplace = collision.GetComponentInParent<Workplace>();
+            _lastWorkplaceIndex = _lastWorkplace.GetWorkplaceIndex();
         }
 
         private void OnTriggerExit2D(Collider2D collision) {
             if (!_isMoving || !collision.CompareTag("BeeStation")) return;
             _lastStationPosition = Vector3.zero;
-            _lastWorkplace = -1;
+            _lastWorkplaceIndex = -1;
+            _lastWorkplace = null;
         }
 
         public void SetWorkingState(bool isWorking) { _isWorking = isWorking; }

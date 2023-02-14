@@ -25,6 +25,8 @@ namespace GOM.Classes.UI {
 
 		public void SetInitialSeconds(int initialSeconds) { _initialSeconds = initialSeconds; }
 
+		public void SetTimer(float minutes, float seconds) { _timer = minutes * 60 + seconds; }
+
         #endregion
 
         #region Methods

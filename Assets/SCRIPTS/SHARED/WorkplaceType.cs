@@ -1,9 +1,10 @@
 namespace GOM.Shared {
     public enum WorkplaceType {
-        POLEN,
-        MIX,
-        CRUSH,
-        BOTTLING,
-        COVER
+        Polen,
+        Mix,
+        Crush,
+        BigBottiling,
+        SmallBottling,
+        Cover
     }
 }

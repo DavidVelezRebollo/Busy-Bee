@@ -15,8 +15,10 @@ MonoBehaviour:
   Type: 1
   Sprites:
   - {fileID: 21300000, guid: 4c4aa3b6b34f1fb4590f9ab5afdcbfcf, type: 3}
+  - {fileID: 21300000, guid: 9629d368471d5404dba3426542d70a3d, type: 3}
   - {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}
-  - {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}
-  - {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}
-  - {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}
+  - {fileID: 21300000, guid: 1dd8abaac53cbe048848e6efd438b2f1, type: 3}
+  - {fileID: 21300000, guid: b0c51806a71fbeb4c9a8bc55943811e9, type: 3}
+  - {fileID: 21300000, guid: f6548299686f79b4681631bb6e33897e, type: 3}
+  - {fileID: 21300000, guid: fee3516a8d4a1544882d4fea4551045a, type: 3}
   ProcessTime: 5

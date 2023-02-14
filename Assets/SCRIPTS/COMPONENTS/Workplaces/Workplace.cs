@@ -13,7 +13,11 @@ namespace GOM.Components.Workplaces {
         [SerializeField] private SpriteRenderer Sprite;
         [SerializeField] private BeeComponent WorkingBee;
         [SerializeField] private FlowerLever Lever;
+        [SerializeField] private int BeePostSortingLayer;
+        [SerializeField] private int InSortingLayer;
+        [SerializeField] private int OutSortingLayer;
         [SerializeField] private int NewHoneySprite;
+        [SerializeField] private bool FlipBee;
         [SerializeField] private WorkplaceType Type;
 
         private PlayerManager _player;
@@ -34,7 +38,6 @@ namespace GOM.Components.Workplaces {
             if (!collision.gameObject.CompareTag("Honey")) return;
 
             if (WorkingBee == null) {
-                _player.AddMiss();
                 _withFlower = false;
                 collision.GetComponent<FlowerComponent>().Miss();
                 return;
@@ -42,6 +45,7 @@ namespace GOM.Components.Workplaces {
 
             _currentFlower = collision.GetComponent<FlowerComponent>();
             _currentFlower.OnFlowerProccess += transformPolen;
+            _currentFlower.ChangeSpriteOrder(InSortingLayer);
             _withFlower = true;
             WorkingBee.SetWorkingState(true);
             
@@ -51,10 +55,13 @@ namespace GOM.Components.Workplaces {
             if (!collision.gameObject.CompareTag("Honey") || WorkingBee == null) return;
 
             _withFlower = false;
+
             if (_currentFlower != null) {
-                _currentFlower.OnFlowerProccess -= transformPolen; 
+                _currentFlower.OnFlowerProccess -= transformPolen;
+                _currentFlower.ChangeSpriteOrder(OutSortingLayer);
                 _currentFlower = null;
             }
+
             _ui.RestartProgressBar();
             WorkingBee.SetWorkingState(false);
         }
@@ -75,6 +82,10 @@ namespace GOM.Components.Workplaces {
 
         public void SetWorkplaceIndex(int index) { _index = index; }
 
+        public int GetBeePostSortingLayer() { return BeePostSortingLayer; }
+
+        public bool Flip() { return FlipBee; }
+
         private void work() {
             bool isEffective = false;
 
@@ -86,25 +97,23 @@ namespace GOM.Components.Workplaces {
 
             _currentFlower.AddProcessTimeElapsed(workSpeed * Time.deltaTime);
             _ui.HandleProgressBar(_currentFlower.GetProccessPercentage());
-            if (_soundManager.IsPlaying("Machine")) return;
-
-            _soundManager.Play("Machine");
         }
 
         private void transformPolen() {
             if(Lever != null) {
-                if((Lever.OnLavander() && _currentFlower.GetType() != FlowerType.Lavander) ||
-                    (!Lever.OnLavander() && _currentFlower.GetType() != FlowerType.StrawberryTree)) {
+                if (Lever.OnLavander() && _currentFlower.GetFlowerType() != FlowerType.Lavander ||
+                    !Lever.OnLavander() && _currentFlower.GetFlowerType() != FlowerType.StrawberryTree) {
                     _currentFlower.Miss();
-                    _player.AddMiss();
                     _withFlower = false;
+
                     return;
                 }
             }
 
-            _currentFlower.ChangeSprite(NewHoneySprite);
-            _soundManager.Pause("Machine");
-            _soundManager.Play("Complete");
+            if (Type is WorkplaceType.BigBottiling or WorkplaceType.SmallBottling)
+                _currentFlower.ChangeCurrentBottle(Type == WorkplaceType.BigBottiling ? BottleType.Big : BottleType.Small);
+            
+            _currentFlower.ChangeSprite(_currentFlower.GetCurrentBottle() == BottleType.Small ? NewHoneySprite + 1 : NewHoneySprite);
         }
     }
 }

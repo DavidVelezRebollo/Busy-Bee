@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acffd6ef5c2a5fd4cb018e22fa0bd532, type: 3}
   m_Name: Lavander
   m_EditorClassIdentifier: 
-  Name: Romero
+  Type: 0
   Sprites:
+  - {fileID: 21300000, guid: 8f450ec243b0b2e4aa47c5bf9437c5fb, type: 3}
+  - {fileID: 21300000, guid: 9629d368471d5404dba3426542d70a3d, type: 3}
   - {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}
-  - {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}
-  - {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}
-  - {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}
-  - {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}
-  - {fileID: 21300000, guid: bb70ba07341cb3f4d9d8e7a26e721899, type: 3}
+  - {fileID: 21300000, guid: 3ccdfb77051730641bfb845829e1799c, type: 3}
+  - {fileID: 21300000, guid: 85a77e333a215094b8138421a1b40729, type: 3}
+  - {fileID: 21300000, guid: d8e6d0f24f7d2504fb8156f94beb2d21, type: 3}
+  - {fileID: 21300000, guid: 04c2e52430f6ec842ae97ad321bea3df, type: 3}
   ProcessTime: 5

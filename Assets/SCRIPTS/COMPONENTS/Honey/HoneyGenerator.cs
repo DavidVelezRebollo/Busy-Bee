@@ -15,16 +15,23 @@ namespace GOM.Components.Honey {
 
         public static Action<FlowerComponent> OnFlowerGeneration;
 
-        private static Timer _timer; // Timer that counts the time between flowers
-        private bool _firstGeneration = true; // Checks if is the first time generating a flower
+        private Timer _timer; // Timer that counts the time between flowers
+        private bool _firstGeneration = true;
+        private bool _aux = false;
+        private static int _flowersCount;
 
         private void Start() {
-            _timer = new Timer(0, 3);
+            _timer = new Timer(0, 5);
         }
 
         private void Update() {
             _timer.UpdateTimer(false);
             NextFlowerTime.text = $"{_timer.GetSecondCount():00}";
+
+            if (_flowersCount == 0 && !_firstGeneration && !_aux) {
+                _timer.SetTimer(0, 5);
+                _aux = true;
+            }
 
             if (_timer.GetMinuteCount() > 0 || _timer.GetSecondCount() > 0) return;
 
@@ -35,6 +42,11 @@ namespace GOM.Components.Honey {
 
             _timer.RestartTimer();
             generateFlower();
+            _aux = false;
+        }
+
+        public static void SubstractFlower() {
+            _flowersCount--;
         }
 
         private void generateFlower() {
@@ -52,6 +64,7 @@ namespace GOM.Components.Honey {
             FlowerComponent component = flower.GetComponent<FlowerComponent>();
             component.SetFinalType(finalType);
             OnFlowerGeneration?.Invoke(component);
+            _flowersCount++;
         }
     }
 }

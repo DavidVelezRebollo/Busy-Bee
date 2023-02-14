@@ -50,12 +50,12 @@ namespace GOM.Components.UI {
 
             if (_gameManager.GamePaused()) return;
 
-            if (_gameManager.GameLost()) {
+            if (_gameManager.GameWon()) {
                 EndText.text = "Jornada\nCompletada";
                 BeeImage.sprite = BeeSprites[0];
                 HandleEndGame();
                 return;
-            } else if (_gameManager.GameWon()) {
+            } else if (_gameManager.GameLost()) {
                 EndText.text = "Te han expulsado\ndel panal";
                 BeeImage.sprite = BeeSprites[1];
                 HandleEndGame();

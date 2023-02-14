@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: 
   Description: 
   SFX: Bee5
-  BeeSprite: {fileID: 21300000, guid: c8981fce57918d949a5753820264cd80, type: 3}
+  BeeSprite: {fileID: 21300000, guid: 715efaaef8916164d8cc4044bf311a1f, type: 3}
   EffectiveWorkplace: 4
   WorkSpeed: 0.6
   EffectiveWorkSpeed: 1.2
