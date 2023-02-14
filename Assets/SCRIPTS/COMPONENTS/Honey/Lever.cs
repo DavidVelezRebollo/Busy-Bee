@@ -13,6 +13,8 @@ namespace GOM.Components.Honey {
 
             FirstPath.SetActive(!FirstPath.activeInHierarchy);
             SecondPath.SetActive(!SecondPath.activeInHierarchy);
+
+            transform.localPosition = new Vector3(FirstPath.activeInHierarchy ? -0.35f : 0.35f, 0f, 0f);
         }
 
     }
