@@ -10,7 +10,7 @@ using UnityEngine;
 namespace GOM.Components.Workplaces {
     public class Workplace : MonoBehaviour {
         
-        [SerializeField] private SpriteRenderer Sprite;
+        [SerializeField] private GameObject HighLight;
         [SerializeField] private BeeComponent WorkingBee;
         [SerializeField] private FlowerLever Lever;
         [SerializeField] private Sprite EffectiveWorkplace;
@@ -27,6 +27,7 @@ namespace GOM.Components.Workplaces {
         private int _index;
         private WorkplaceUI _ui;
         private FlowerComponent _currentFlower;
+        private SpriteRenderer _highlightRenderer;
 
         private bool _withFlower;
 
@@ -34,6 +35,7 @@ namespace GOM.Components.Workplaces {
             _ui = GetComponent<WorkplaceUI>();
             _player = PlayerManager.Instance;
             _soundManager = SoundManager.Instance;
+            _highlightRenderer = HighLight.GetComponent<SpriteRenderer>();
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
@@ -89,6 +91,23 @@ namespace GOM.Components.Workplaces {
         public WorkplaceType GetWorkplaceType() { return Type; }
 
         public bool Flip() { return FlipBee; }
+
+        public void SetHighlight(bool isEffective)
+        {
+            if (isEffective)
+            {
+                _highlightRenderer.sprite = EffectiveWorkplace;
+            }
+            else
+            {
+                _highlightRenderer.sprite = HighlightWorkplace;
+            }
+        }
+
+        public void ActivateHighLight(bool active)
+        {
+            HighLight.SetActive(active);
+        }
 
         private void work() {
             bool isEffective = false;

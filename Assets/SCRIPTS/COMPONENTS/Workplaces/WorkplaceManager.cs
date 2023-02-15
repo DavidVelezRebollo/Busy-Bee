@@ -28,6 +28,8 @@ namespace GOM.Components.Workplaces {
             }
         }
 
+        public Workplace GetWorkplace(int index) { return Workplaces[index]; }
+
         public int WorkplaceCount() { return Workplaces.Length; }
 
         public WorkplaceType GetWorkplaceType(int index) { return Workplaces[index].GetWorkplaceType(); }

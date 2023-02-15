@@ -46,9 +46,8 @@ namespace GOM.Components.Bees {
             if (_isWorking || _block) return;
 
             for(int i = 0; i < _workplaceManager.WorkplaceCount(); i++) {
-                if(_workplaceManager.GetWorkplaceType(i) == BeeType.EffectiveWorkplace) {
-                    Debug.Log("To Do");
-                }
+                    _workplaceManager.GetWorkplace(i).ActivateHighLight(true);
+                    _workplaceManager.GetWorkplace(i).SetHighlight(_workplaceManager.GetWorkplaceType(i) == BeeType.EffectiveWorkplace);
             }
 
             Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -62,6 +61,11 @@ namespace GOM.Components.Bees {
 
         private void OnMouseUp() {
             _isMoving = false;
+
+            for (int i = 0; i < _workplaceManager.WorkplaceCount(); i++)
+            {
+                _workplaceManager.GetWorkplace(i).ActivateHighLight(false);
+            }
 
             if (_lastStationPosition == Vector3.zero) {
                 transform.position = _initialPosition;
