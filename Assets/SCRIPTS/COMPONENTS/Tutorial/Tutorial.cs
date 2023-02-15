@@ -71,7 +71,6 @@ namespace GOM.Components.Tutorial {
 
             Panel01.SetActive(true);
             _gameManager.SetGameState(GameState.Tutorial);
-            _player.ResetMisses();
             _aux = true;
             _aux5 = true;
         }
