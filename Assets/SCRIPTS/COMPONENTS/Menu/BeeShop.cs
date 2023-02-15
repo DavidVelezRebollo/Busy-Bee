@@ -14,6 +14,11 @@ namespace GOM.Components.Menu
         private GameManager _gameManager;
         [SerializeField] private Button[] Buttons;
         [SerializeField] private Sprite[] ButtonSprites;
+        private bool isOpening = false;
+        private bool isClosing = false;
+        private bool isOpened = false;
+        [SerializeField] private RectTransform parent;
+        [SerializeField] float closingSpeed = 1000;
 
         private void Start()
         {
@@ -24,6 +29,36 @@ namespace GOM.Components.Menu
             {
                 Buttons[i].image.sprite = _workplaceManager.HasBee(i) ? ButtonSprites[1] : ButtonSprites[0];
             }
+        }
+
+        private void Update()
+        {
+            if (!isOpening && !isClosing) return;
+            if (isOpening)
+            {
+                parent.anchoredPosition += Vector2.up * closingSpeed * Time.deltaTime;
+                if (parent.anchoredPosition.y >= -185)
+                {
+                    isOpening = false;
+                    isOpened = true;
+                }
+            }
+            else if (isClosing)
+            {
+                parent.anchoredPosition += Vector2.down * closingSpeed * Time.deltaTime;
+                if (parent.anchoredPosition.y <= -980)
+                {
+                    isClosing = false;
+                    isOpened = false;
+                }
+            }
+        }
+
+        public void OpenAndClose()
+        {
+            if (isOpening || isClosing) return;
+            if (isOpened) isClosing = true;
+            else isOpening = true;
         }
 
         public void OnBeeSelected(int index)
@@ -53,10 +88,9 @@ namespace GOM.Components.Menu
         public void ActiveBeeShop() {
             GameState state;
 
-            state = _gameManager.InTutorial() ? GameState.Tutorial : GameState.Paused;
+            //state = _gameManager.InTutorial() ? GameState.Tutorial : GameState.Paused;
 
-            GameManager.Instance.SetGameState(GameManager.Instance.GamePaused() ? GameState.Playing : state);
-            gameObject.SetActive(!gameObject.activeInHierarchy);
+            //GameManager.Instance.SetGameState(GameManager.Instance.GamePaused() ? GameState.Playing : state);
         }
     }
 }
