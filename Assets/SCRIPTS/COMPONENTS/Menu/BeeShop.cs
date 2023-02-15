@@ -2,6 +2,7 @@ using GOM.Components.Bees;
 using GOM.Components.Workplaces;
 using GOM.Components.Core;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace GOM.Components.Menu
 {
@@ -11,11 +12,18 @@ namespace GOM.Components.Menu
         private int _beesSelected = 3;
         private WorkplaceManager _workplaceManager;
         private GameManager _gameManager;
+        [SerializeField] private Button[] Buttons;
+        [SerializeField] private Sprite[] ButtonSprites;
 
         private void Start()
         {
             _workplaceManager = WorkplaceManager.Instance;
             _gameManager = GameManager.Instance;
+
+            for(int i=0; i<Bees.Length; i++)
+            {
+                Buttons[i].image.sprite = _workplaceManager.HasBee(i) ? ButtonSprites[1] : ButtonSprites[0];
+            }
         }
 
         public void OnBeeSelected(int index)
@@ -29,6 +37,7 @@ namespace GOM.Components.Menu
                 Bees[index].gameObject.SetActive(false);
                 _workplaceManager.DeleteBee(Bees[index]);
                 Debug.Log("Abeja" + index + "desactivada");
+                Buttons[index].image.sprite = ButtonSprites[0];
             }
             else
             {
@@ -37,6 +46,7 @@ namespace GOM.Components.Menu
                 Bees[index].gameObject.SetActive(true);
                 _workplaceManager.AddBee(Bees[index]);
                 Debug.Log("Abeja" + index + "activada");
+                Buttons[index].image.sprite = ButtonSprites[1];
             }
         }
 

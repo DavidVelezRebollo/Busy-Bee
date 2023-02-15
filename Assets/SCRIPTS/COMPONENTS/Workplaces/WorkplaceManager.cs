@@ -32,6 +32,8 @@ namespace GOM.Components.Workplaces {
 
         public WorkplaceType GetWorkplaceType(int index) { return Workplaces[index].GetWorkplaceType(); }
 
+        public bool HasBee(int index) { return Workplaces[index].HaveBee(); }
+
         public void SetBee(BeeComponent bee, int index) {
             int i = 0, beeIndex = 0;
             bool found = false;
