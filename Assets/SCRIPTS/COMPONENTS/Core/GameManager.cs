@@ -9,6 +9,7 @@ namespace GOM.Components.Core {
         Menu,
         Paused,
         Tutorial,
+        BeeShop,
         Lose,
         Won,
         Playing

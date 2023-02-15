@@ -9,7 +9,7 @@ namespace GOM.Components.Menu
     public class BeeShop : MonoBehaviour
     {
         [SerializeField] private BeeComponent[] Bees;
-        private int _beesSelected = 3;
+        [SerializeField] private int BeesSelected = 3;
         private WorkplaceManager _workplaceManager;
         private GameManager _gameManager;
         [SerializeField] private Button[] Buttons;
@@ -68,7 +68,7 @@ namespace GOM.Components.Menu
             if(active)
             {
                 if (Bees[index].IsWorking()) return;
-                _beesSelected--;
+                BeesSelected--;
                 Bees[index].gameObject.SetActive(false);
                 _workplaceManager.DeleteBee(Bees[index]);
                 Debug.Log("Abeja" + index + "desactivada");
@@ -76,8 +76,8 @@ namespace GOM.Components.Menu
             }
             else
             {
-                if (_beesSelected >= 3) return;
-                _beesSelected++;
+                if (BeesSelected >= 3) return;
+                BeesSelected++;
                 Bees[index].gameObject.SetActive(true);
                 _workplaceManager.AddBee(Bees[index]);
                 Debug.Log("Abeja" + index + "activada");
@@ -88,9 +88,13 @@ namespace GOM.Components.Menu
         public void ActiveBeeShop() {
             GameState state;
 
-            //state = _gameManager.InTutorial() ? GameState.Tutorial : GameState.Paused;
+            Debug.Log(_gameManager.GameStop());
 
-            //GameManager.Instance.SetGameState(GameManager.Instance.GamePaused() ? GameState.Playing : state);
+            _gameManager.SetGameState(_gameManager.GameStop() ? GameState.Playing : GameState.BeeShop);
+        }
+
+        public int ActiveBees() {
+            return BeesSelected;
         }
     }
 }
