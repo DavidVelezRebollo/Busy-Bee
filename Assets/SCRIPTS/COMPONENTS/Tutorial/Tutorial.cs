@@ -27,6 +27,7 @@ namespace GOM.Components.Tutorial {
         private bool _aux2 = false;
         private bool _aux3 = false;
         private bool _aux4 = false;
+        private bool _aux5 = false;
         private bool _firstActivation = false;
 
         private void Start() {
@@ -66,12 +67,13 @@ namespace GOM.Components.Tutorial {
                 _player.ResetMisses();
             }
 
-            if(_player.GetMissNumber() == 0 || _aux) return;
+            if((_player.GetMissNumber() == 0 && _aux5) || _aux) return;
 
             Panel01.SetActive(true);
             _gameManager.SetGameState(GameState.Tutorial);
             _player.ResetMisses();
             _aux = true;
+            _aux5 = true;
         }
 
         public void OnResumeGameButton() {
@@ -96,6 +98,10 @@ namespace GOM.Components.Tutorial {
 
         public void ToggleAux04() {
             _aux4 = !_aux4;
+        }
+
+        public void ToggleAux05() {
+            _aux5 = !_aux5;
         }
 
         public void ToggleFirstActivation() {
