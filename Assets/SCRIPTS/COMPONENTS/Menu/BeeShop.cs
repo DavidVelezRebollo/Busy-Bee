@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using GOM.Components.Bees;
 using GOM.Components.Workplaces;
-using UnityEngine.UI;
+using GOM.Components.Core;
+using UnityEngine;
 
 namespace GOM.Components.Menu
 {
@@ -12,10 +10,12 @@ namespace GOM.Components.Menu
         [SerializeField] private BeeComponent[] Bees;
         private int _beesSelected = 3;
         private WorkplaceManager _workplaceManager;
+        private GameManager _gameManager;
 
         private void Start()
         {
             _workplaceManager = WorkplaceManager.Instance;
+            _gameManager = GameManager.Instance;
         }
 
         public void OnBeeSelected(int index)
@@ -38,6 +38,15 @@ namespace GOM.Components.Menu
                 _workplaceManager.AddBee(Bees[index]);
                 Debug.Log("Abeja" + index + "activada");
             }
+        }
+
+        public void ActiveBeeShop() {
+            GameState state;
+
+            state = _gameManager.InTutorial() ? GameState.Tutorial : GameState.Paused;
+
+            GameManager.Instance.SetGameState(GameManager.Instance.GamePaused() ? GameState.Playing : state);
+            gameObject.SetActive(!gameObject.activeInHierarchy);
         }
     }
 }

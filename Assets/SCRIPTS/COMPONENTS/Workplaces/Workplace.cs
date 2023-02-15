@@ -13,6 +13,8 @@ namespace GOM.Components.Workplaces {
         [SerializeField] private SpriteRenderer Sprite;
         [SerializeField] private BeeComponent WorkingBee;
         [SerializeField] private FlowerLever Lever;
+        [SerializeField] private Sprite EffectiveWorkplace;
+        [SerializeField] private Sprite HighlightWorkplace;
         [SerializeField] private int BeePostSortingLayer;
         [SerializeField] private int InSortingLayer;
         [SerializeField] private int OutSortingLayer;
@@ -83,6 +85,8 @@ namespace GOM.Components.Workplaces {
         public void SetWorkplaceIndex(int index) { _index = index; }
 
         public int GetBeePostSortingLayer() { return BeePostSortingLayer; }
+
+        public WorkplaceType GetWorkplaceType() { return Type; }
 
         public bool Flip() { return FlipBee; }
 

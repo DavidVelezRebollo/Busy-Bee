@@ -1,4 +1,5 @@
 using GOM.Components.Bees;
+using GOM.Shared;
 using UnityEngine;
 using System;
 
@@ -26,6 +27,10 @@ namespace GOM.Components.Workplaces {
                 i++;
             }
         }
+
+        public int WorkplaceCount() { return Workplaces.Length; }
+
+        public WorkplaceType GetWorkplaceType(int index) { return Workplaces[index].GetWorkplaceType(); }
 
         public void SetBee(BeeComponent bee, int index) {
             int i = 0, beeIndex = 0;

@@ -45,6 +45,12 @@ namespace GOM.Components.Bees {
         private void OnMouseDrag() {
             if (_isWorking || _block) return;
 
+            for(int i = 0; i < _workplaceManager.WorkplaceCount(); i++) {
+                if(_workplaceManager.GetWorkplaceType(i) == BeeType.EffectiveWorkplace) {
+                    Debug.Log("To Do");
+                }
+            }
+
             Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
             transform.position = new Vector3(mousePosition.x, mousePosition.y);
