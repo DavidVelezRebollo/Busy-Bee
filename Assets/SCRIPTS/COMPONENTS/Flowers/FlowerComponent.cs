@@ -74,6 +74,8 @@ namespace GOM.Components.Flowers {
 
         public BottleType GetCurrentBottle() { return _currentBottle; }
 
+        public GameObject GetPolenParticles() { return FlowerType.PolenParticle; }
+
         public void ChangeCurrentBottle(BottleType type) { _currentBottle = type; }
 
         public void ChangeSpriteOrder(int order) { _spriteRenderer.sortingOrder = order; }

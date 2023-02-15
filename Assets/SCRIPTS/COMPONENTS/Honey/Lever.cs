@@ -8,6 +8,8 @@ namespace GOM.Components.Honey {
         [SerializeField] private HoneyWaypoint FirstPath;
         [Tooltip("Second path which the lever will enable or disable")]
         [SerializeField] private HoneyWaypoint SecondPath;
+        [Tooltip("Particle Prefab")]
+        [SerializeField] private GameObject ParticlePrefab;
 
         private bool _firstPath = true;
 
@@ -20,6 +22,8 @@ namespace GOM.Components.Honey {
             LeverWaypoint.SetNextWaypoint(_firstPath ? FirstPath : SecondPath);
 
             transform.localRotation = Quaternion.Euler(0f, 0f, _firstPath ? -25f : 25f);
+            GameObject particles = Instantiate(ParticlePrefab, transform.position - new Vector3(0f, 0.6f), Quaternion.Euler(90f, 0f, 0f));
+            Destroy(particles, 1f);
         }
 
     }

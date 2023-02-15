@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Lavander
   m_EditorClassIdentifier: 
   Type: 0
+  PolenParticle: {fileID: 1795863232637195857, guid: 91575629901c9524d8761092b95a4c2f, type: 3}
   Sprites:
   - {fileID: 21300000, guid: 8f450ec243b0b2e4aa47c5bf9437c5fb, type: 3}
   - {fileID: 21300000, guid: 9629d368471d5404dba3426542d70a3d, type: 3}

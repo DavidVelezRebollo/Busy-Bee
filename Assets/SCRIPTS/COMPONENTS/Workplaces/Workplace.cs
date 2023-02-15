@@ -110,6 +110,13 @@ namespace GOM.Components.Workplaces {
                 }
             }
 
+            GameObject flowerParticle;
+
+            if (Type == WorkplaceType.Polen) {
+                flowerParticle = Instantiate(_currentFlower.GetPolenParticles(), _currentFlower.transform.position, Quaternion.identity);
+                Destroy(flowerParticle, 2f);
+            }
+
             if (Type is WorkplaceType.BigBottiling or WorkplaceType.SmallBottling)
                 _currentFlower.ChangeCurrentBottle(Type == WorkplaceType.BigBottiling ? BottleType.Big : BottleType.Small);
             
