@@ -11,11 +11,13 @@ namespace GOM.Components.Tutorial {
         [SerializeField] private GameObject Panel01;
         [SerializeField] private Workplace TutorialWorkplace;
         [SerializeField] private GameObject Button01;
+        [SerializeField] private GameObject ShopTutorialPanel01;
         private GameManager _gameManager; 
         private PlayerManager _player;
 
         private bool _aux;
         private bool _aux2 = false;
+        private bool _aux3 = false;
 
         private void Start() {
             _gameManager = GameManager.Instance;
@@ -43,16 +45,12 @@ namespace GOM.Components.Tutorial {
             _gameManager.SetGameState(GameState.Playing);
         }
 
-        public void ToggleAux() {
+        public void ToggleAux02() {
             _aux2 = !_aux2;
         }
 
-        private IEnumerator WaitAction() {
-             {
-                yield return null;
-            }
-
-            
+        public void ToggleAux03() {
+            _aux3 = !_aux3;
         }
     }
 }
