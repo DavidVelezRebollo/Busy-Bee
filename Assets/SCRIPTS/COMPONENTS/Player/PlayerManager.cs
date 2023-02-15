@@ -19,6 +19,7 @@ namespace GOM.Components.Player
 
         [SerializeField] private int MaxMisses;
         [SerializeField] private int HivesToComplete;
+        [SerializeField] private GameObject[] Fails;
 
         private int[] _honeyCount;
         private int _completedHives = 0;
@@ -49,10 +50,11 @@ namespace GOM.Components.Player
 
         #endregion
 
-        public void AddMiss() { 
+        public void AddMiss() {
+            Fails[_missNumber].SetActive(true);
             _missNumber++;
             SoundManager.Instance.Play("Error");
-
+            
             if (_missNumber < MaxMisses) return;
 
             // TODO - Handle lose

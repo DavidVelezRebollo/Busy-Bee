@@ -37,7 +37,7 @@ namespace GOM.Components.Menu
             if (isOpening)
             {
                 parent.anchoredPosition += Vector2.up * closingSpeed * Time.deltaTime;
-                if (parent.anchoredPosition.y >= -185)
+                if (parent.anchoredPosition.y >= -10)
                 {
                     isOpening = false;
                     isOpened = true;
@@ -46,7 +46,7 @@ namespace GOM.Components.Menu
             else if (isClosing)
             {
                 parent.anchoredPosition += Vector2.down * closingSpeed * Time.deltaTime;
-                if (parent.anchoredPosition.y <= -980)
+                if (parent.anchoredPosition.y <= -832)
                 {
                     isClosing = false;
                     isOpened = false;
