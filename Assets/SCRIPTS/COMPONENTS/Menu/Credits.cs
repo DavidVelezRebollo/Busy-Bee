@@ -6,7 +6,9 @@ namespace GOM.Components.Menu
 {
     public class Credits : MonoBehaviour
     {
-        private float _loweringSpeed = 200f;
+        [SerializeField] private float LoweringSpeed;
+        [SerializeField] private float InitY;
+        [SerializeField] private float FinalY;
         private RectTransform _creditsTransform;
 
         private void Start()
@@ -17,12 +19,12 @@ namespace GOM.Components.Menu
 
         private void Update()
         {
-            if(_creditsTransform.anchoredPosition.y<2430) _creditsTransform.anchoredPosition += Vector2.up * _loweringSpeed * Time.deltaTime;
+            if(_creditsTransform.anchoredPosition.y<FinalY) _creditsTransform.anchoredPosition += Vector2.up * LoweringSpeed * Time.deltaTime;
         }
 
         public void ResetPosition()
         {
-            if(_creditsTransform!=null) _creditsTransform.anchoredPosition = new Vector2(_creditsTransform.anchoredPosition.x, -880);
+            if(_creditsTransform!=null) _creditsTransform.anchoredPosition = new Vector2(_creditsTransform.anchoredPosition.x, InitY);
         }
     }
 }
