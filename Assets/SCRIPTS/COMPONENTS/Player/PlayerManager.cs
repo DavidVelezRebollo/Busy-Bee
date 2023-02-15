@@ -19,6 +19,7 @@ namespace GOM.Components.Player
 
         [SerializeField] private int MaxMisses;
         [SerializeField] private int HivesToComplete;
+        [SerializeField] private GameObject EndGame;
         [SerializeField] private GameObject[] Fails;
 
         private int[] _honeyCount;
@@ -34,6 +35,7 @@ namespace GOM.Components.Player
             if (_completedHives != HivesToComplete) return;
 
             GameManager.Instance.SetGameState(GameState.Won);
+            EndGame.SetActive(true);
         }
 
         #region Getters & Setters
@@ -46,7 +48,13 @@ namespace GOM.Components.Player
 
         public int GetMissNumber() { return _missNumber; }
 
-        public void ResetMisses() { _missNumber = 0; }
+        public void ResetMisses() { 
+            _missNumber = 0;
+
+            for(int i = 0; i < Fails.Length; i++) {
+                Fails[i].SetActive(false);
+            }
+        }
 
         #endregion
 
@@ -58,6 +66,7 @@ namespace GOM.Components.Player
             if (_missNumber < MaxMisses) return;
 
             // TODO - Handle lose
+            EndGame.SetActive(true);
             GameManager.Instance.SetGameState(GameState.Lose);
         }
 

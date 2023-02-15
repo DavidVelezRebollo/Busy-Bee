@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using GOM.Components.Sounds;
 using GOM.Components.Core;
+using GOM.Shared;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
@@ -162,22 +163,26 @@ namespace GOM.Components.Menu {
         public void ExitToMenuFromTutorial()
         {
             GameManager.Instance.SetGameState(GameState.Menu);
-            _scenesLoading.Add(SceneManager.UnloadSceneAsync(2));
-            _scenesLoading.Add(SceneManager.LoadSceneAsync(1));
+            _scenesLoading.Add(SceneManager.UnloadSceneAsync((int) SceneIndexes.TUTORIAL));
+            _scenesLoading.Add(SceneManager.LoadSceneAsync((int) SceneIndexes.MENU, LoadSceneMode.Additive));
 
             StartCoroutine(LoadMenuScene());
         }
 
         public void ExitToMenuFromGame() {
             GameManager.Instance.SetGameState(GameState.Menu);
-            _scenesLoading.Add(SceneManager.UnloadSceneAsync(3));
-            _scenesLoading.Add(SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive));
+            _scenesLoading.Add(SceneManager.UnloadSceneAsync((int) SceneIndexes.GAME));
+            _scenesLoading.Add(SceneManager.LoadSceneAsync((int) SceneIndexes.MENU, LoadSceneMode.Additive));
 
             StartCoroutine(LoadMenuScene());
         }
 
         public void CloseMenu() {
             GameManager.Instance.SetGameState(GameState.Playing);
+        }
+
+        public void PlayButton() {
+            SoundManager.Instance.Play("Button");
         }
 
         #endregion

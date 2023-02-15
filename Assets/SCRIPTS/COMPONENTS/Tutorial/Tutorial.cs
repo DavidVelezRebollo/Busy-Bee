@@ -67,7 +67,7 @@ namespace GOM.Components.Tutorial {
                 _player.ResetMisses();
             }
 
-            if((_player.GetMissNumber() == 0 && !_aux5) || _aux) return;
+            if(_player.GetMissNumber() == 0 || !_aux5 || _aux) return;
 
             Panel01.SetActive(true);
             _gameManager.SetGameState(GameState.Tutorial);

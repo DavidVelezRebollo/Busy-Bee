@@ -36,7 +36,7 @@ namespace GOM.Components.Honey {
             if (_timer.GetMinuteCount() > 0 || _timer.GetSecondCount() > 0) return;
 
             if (_firstGeneration) {
-                _timer.SetInitialSeconds(30);
+                _timer.SetInitialSeconds(35);
                 _firstGeneration = false;
             }
 
