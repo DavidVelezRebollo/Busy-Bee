@@ -56,7 +56,7 @@ namespace GOM.Components.UI {
                 HandleEndGame();
                 return;
             } else if (_gameManager.GameLost()) {
-                EndText.text = "Te han expulsado\ndel panal";
+                EndText.text = "Expulsado\ndel panal";
                 BeeImage.sprite = BeeSprites[1];
                 HandleEndGame();
                 return;

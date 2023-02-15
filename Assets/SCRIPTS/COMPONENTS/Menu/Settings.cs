@@ -163,18 +163,16 @@ namespace GOM.Components.Menu {
         public void ExitToMenuFromTutorial()
         {
             GameManager.Instance.SetGameState(GameState.Menu);
-            _scenesLoading.Add(SceneManager.UnloadSceneAsync((int) SceneIndexes.TUTORIAL));
             _scenesLoading.Add(SceneManager.LoadSceneAsync((int) SceneIndexes.MENU, LoadSceneMode.Additive));
+            _scenesLoading.Add(SceneManager.UnloadSceneAsync((int) SceneIndexes.TUTORIAL));
 
             StartCoroutine(LoadMenuScene());
         }
 
         public void ExitToMenuFromGame() {
             GameManager.Instance.SetGameState(GameState.Menu);
-            _scenesLoading.Add(SceneManager.UnloadSceneAsync((int) SceneIndexes.GAME));
-            _scenesLoading.Add(SceneManager.LoadSceneAsync((int) SceneIndexes.MENU, LoadSceneMode.Additive));
-
-            StartCoroutine(LoadMenuScene());
+            SceneManager.LoadSceneAsync((int) SceneIndexes.MENU, LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync((int) SceneIndexes.GAME);
         }
 
         public void CloseMenu() {
