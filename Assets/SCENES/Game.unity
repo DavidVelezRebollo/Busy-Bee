@@ -6340,6 +6340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f51d706444bcb34288d21eb8851570a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParticlePrefab: {fileID: 0}
 --- !u!61 &802262714
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11679,11 +11680,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bees:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1181663040}
+  - {fileID: 28409117}
+  - {fileID: 1225169632}
+  - {fileID: 125373283}
+  - {fileID: 362521694}
 --- !u!114 &1531951886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13948,6 +13949,7 @@ MonoBehaviour:
   LeverWaypoint: {fileID: 360402096}
   FirstPath: {fileID: 1219532648}
   SecondPath: {fileID: 627188833}
+  ParticlePrefab: {fileID: 0}
 --- !u!61 &1840649245
 BoxCollider2D:
   m_ObjectHideFlags: 0
