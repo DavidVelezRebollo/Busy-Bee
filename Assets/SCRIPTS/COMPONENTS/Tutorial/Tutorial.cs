@@ -23,7 +23,7 @@ namespace GOM.Components.Tutorial {
         private GameManager _gameManager; 
         private PlayerManager _player;
 
-        private bool _aux;
+        private bool _aux = false;
         private bool _aux2 = false;
         private bool _aux3 = false;
         private bool _aux4 = false;
@@ -67,7 +67,7 @@ namespace GOM.Components.Tutorial {
                 _player.ResetMisses();
             }
 
-            if((_player.GetMissNumber() == 0 && _aux5) || _aux) return;
+            if((_player.GetMissNumber() == 0 && !_aux5) || _aux) return;
 
             Panel01.SetActive(true);
             _gameManager.SetGameState(GameState.Tutorial);
