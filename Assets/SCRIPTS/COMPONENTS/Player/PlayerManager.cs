@@ -45,6 +45,8 @@ namespace GOM.Components.Player
 
         public int GetMissNumber() { return _missNumber; }
 
+        public void ResetMisses() { _missNumber = 0; }
+
         #endregion
 
         public void AddMiss() { 

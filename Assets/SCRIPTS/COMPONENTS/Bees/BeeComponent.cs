@@ -17,6 +17,7 @@ namespace GOM.Components.Bees {
         private int _intiialSortingOrder;
         private int _lastWorkplaceIndex;
         private int _sortingOrder;
+        private bool _block;
         private bool _isMoving;
         private bool _isWorking;
         private bool _flip;
@@ -34,7 +35,7 @@ namespace GOM.Components.Bees {
 
 
         private void OnMouseDown() {
-            if (_isWorking) return;
+            if (_isWorking || _block) return;
 
             if (SoundManager.Instance.IsPlaying(BeeType.SFX)) return;
 
@@ -42,7 +43,7 @@ namespace GOM.Components.Bees {
         }
 
         private void OnMouseDrag() {
-            if (_isWorking) return;
+            if (_isWorking || _block) return;
 
             Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
@@ -96,5 +97,7 @@ namespace GOM.Components.Bees {
         public WorkplaceType GetEffectiveWorkplace() { return BeeType.EffectiveWorkplace; }
 
         public bool IsWorking() { return _isWorking; }
+
+        public void BlockBee(bool block) { _block = block; }
     }
 }

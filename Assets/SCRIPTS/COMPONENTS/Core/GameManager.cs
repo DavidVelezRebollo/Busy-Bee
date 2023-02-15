@@ -8,6 +8,7 @@ namespace GOM.Components.Core {
     public enum GameState {
         Menu,
         Paused,
+        Tutorial,
         Lose,
         Won,
         Playing
@@ -94,6 +95,10 @@ namespace GOM.Components.Core {
             return _state == GameState.Won;
         }
 
+        public bool InTutorial() {
+            return _state == GameState.Tutorial;
+        }
+
         #endregion
 
         #region Auxiliar Methods
@@ -107,7 +112,8 @@ namespace GOM.Components.Core {
         }
 
         private void HandleMusic() {
-            SoundManager.Instance.Play(_state == GameState.Menu ? "MusicMenu" : "MainTheme");
+            if(!SoundManager.Instance.IsPlaying(_state == GameState.Menu ? "MusicMenu" : "MainTheme"))
+                SoundManager.Instance.Play(_state == GameState.Menu ? "MusicMenu" : "MainTheme");
             SoundManager.Instance.Stop(_state == GameState.Menu ? "MainTheme" : "MusicMenu");
         }
 

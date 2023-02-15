@@ -14,7 +14,7 @@ namespace GOM.Classes.UI {
 			_initialMinutes = totalMinutes * 60;
 			_initialSeconds = totalSeconds;
 			_currentMinutes = totalMinutes * 60;
-			_currentSeconds = 0;
+			_currentSeconds = totalSeconds;
 		}
 
         #region Getters & Setters
