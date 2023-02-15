@@ -4320,7 +4320,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1330184214}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4517,6 +4517,7 @@ MonoBehaviour:
   NewHoneySprite: 2
   FlipBee: 0
   Type: 1
+  BeeContainer: {fileID: 1910148975}
 --- !u!114 &374626720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5077,7 +5078,7 @@ SpriteRenderer:
   m_SortingLayerID: -1883226359
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c8981fce57918d949a5753820264cd80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a7a25d9daf8447f4e957cb5fbe524b8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6919,12 +6920,13 @@ MonoBehaviour:
   Lever: {fileID: 0}
   EffectiveWorkplace: {fileID: 21300000, guid: 3e27db4746b3c9b42be562e580d2eb77, type: 3}
   HighlightWorkplace: {fileID: 21300000, guid: a720b7d637350664f8fe2f4f1aeeba46, type: 3}
-  BeePostSortingLayer: 3
+  BeePostSortingLayer: 4
   InSortingLayer: 0
   OutSortingLayer: 2
   NewHoneySprite: 3
   FlipBee: 0
   Type: 3
+  BeeContainer: {fileID: 990871673}
 --- !u!114 &865503688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8905,6 +8907,7 @@ MonoBehaviour:
   NewHoneySprite: 5
   FlipBee: 1
   Type: 5
+  BeeContainer: {fileID: 525597830}
 --- !u!114 &1133979794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10529,8 +10532,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1670546288}
   - {fileID: 354582401}
+  - {fileID: 1670546288}
   - {fileID: 1071254953}
   - {fileID: 1267872878}
   - {fileID: 1181583349}
@@ -10889,6 +10892,7 @@ MonoBehaviour:
   NewHoneySprite: 0
   FlipBee: 0
   Type: 0
+  BeeContainer: {fileID: 638544608}
 --- !u!114 &1355288497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12183,6 +12187,7 @@ MonoBehaviour:
   NewHoneySprite: 1
   FlipBee: 0
   Type: 2
+  BeeContainer: {fileID: 2139110855}
 --- !u!114 &1479077319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13908,7 +13913,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1330184214}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15965,12 +15970,13 @@ MonoBehaviour:
   Lever: {fileID: 0}
   EffectiveWorkplace: {fileID: 21300000, guid: 3b7d4b6c6df7ac848ad2b7fedf880258, type: 3}
   HighlightWorkplace: {fileID: 21300000, guid: c6b64c44d6ceff14ea1821bb02921e4d, type: 3}
-  BeePostSortingLayer: 0
+  BeePostSortingLayer: 1
   InSortingLayer: 0
   OutSortingLayer: 2
   NewHoneySprite: 4
   FlipBee: 1
   Type: 4
+  BeeContainer: {fileID: 520450751}
 --- !u!114 &1883994273
 MonoBehaviour:
   m_ObjectHideFlags: 0

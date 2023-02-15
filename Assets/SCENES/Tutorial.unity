@@ -3774,7 +3774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  HighLight: {fileID: 0}
   WorkingBee: {fileID: 0}
   Lever: {fileID: 0}
   EffectiveWorkplace: {fileID: 0}
@@ -3785,6 +3785,7 @@ MonoBehaviour:
   NewHoneySprite: 5
   FlipBee: 1
   Type: 5
+  BeeContainer: {fileID: 1788123401}
 --- !u!114 &357440834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3956,7 +3957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  HighLight: {fileID: 0}
   WorkingBee: {fileID: 0}
   Lever: {fileID: 0}
   EffectiveWorkplace: {fileID: 0}
@@ -3967,6 +3968,7 @@ MonoBehaviour:
   NewHoneySprite: 4
   FlipBee: 1
   Type: 4
+  BeeContainer: {fileID: 883670546}
 --- !u!1 &368340497
 GameObject:
   m_ObjectHideFlags: 0
@@ -5835,7 +5837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  HighLight: {fileID: 0}
   WorkingBee: {fileID: 2062299861}
   Lever: {fileID: 454229973}
   EffectiveWorkplace: {fileID: 0}
@@ -5846,6 +5848,7 @@ MonoBehaviour:
   NewHoneySprite: 0
   FlipBee: 0
   Type: 0
+  BeeContainer: {fileID: 2012674834}
 --- !u!50 &517427198
 Rigidbody2D:
   serializedVersion: 4
@@ -15054,6 +15057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxMisses: 50
   HivesToComplete: 13
+  Fails: []
 --- !u!4 &1476350450
 Transform:
   m_ObjectHideFlags: 0
@@ -17380,7 +17384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  HighLight: {fileID: 0}
   WorkingBee: {fileID: 0}
   Lever: {fileID: 0}
   EffectiveWorkplace: {fileID: 0}
@@ -17391,6 +17395,7 @@ MonoBehaviour:
   NewHoneySprite: 1
   FlipBee: 0
   Type: 2
+  BeeContainer: {fileID: 566432803}
 --- !u!114 &1672521466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19701,7 +19706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  HighLight: {fileID: 0}
   WorkingBee: {fileID: 0}
   Lever: {fileID: 0}
   EffectiveWorkplace: {fileID: 0}
@@ -19712,6 +19717,7 @@ MonoBehaviour:
   NewHoneySprite: 2
   FlipBee: 0
   Type: 1
+  BeeContainer: {fileID: 230060074}
 --- !u!50 &1904269385
 Rigidbody2D:
   serializedVersion: 4
@@ -20919,7 +20925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d107e89aa4b3fdb4e9fe2cd477772699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  HighLight: {fileID: 0}
   WorkingBee: {fileID: 0}
   Lever: {fileID: 0}
   EffectiveWorkplace: {fileID: 0}
@@ -20930,6 +20936,7 @@ MonoBehaviour:
   NewHoneySprite: 3
   FlipBee: 0
   Type: 3
+  BeeContainer: {fileID: 829173715}
 --- !u!1 &2023631434
 GameObject:
   m_ObjectHideFlags: 0

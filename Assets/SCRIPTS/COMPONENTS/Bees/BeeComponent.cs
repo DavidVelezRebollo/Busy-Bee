@@ -3,6 +3,7 @@ using GOM.Components.Workplaces;
 using GOM.Components.Sounds;
 using GOM.Shared;
 using UnityEngine;
+using GOM.Components.Core;
 
 namespace GOM.Components.Bees {
     public class BeeComponent : MonoBehaviour {
@@ -43,6 +44,7 @@ namespace GOM.Components.Bees {
         }
 
         private void OnMouseDrag() {
+            if (GameManager.Instance.GameStop() && !GameManager.Instance.InTutorial()) return;
             if (_isWorking || _block) return;
 
             for(int i = 0; i < _workplaceManager.WorkplaceCount(); i++) {
@@ -80,15 +82,14 @@ namespace GOM.Components.Bees {
             _renderer.flipX = _flip;
 
             _workplaceManager.SetBee(this, _lastWorkplaceIndex);
+            _lastWorkplace = _workplaceManager.GetWorkplace(_lastWorkplaceIndex);
         }
 
         private void OnTriggerEnter2D(Collider2D collision) {
             if (!_isMoving || !collision.CompareTag("BeeStation")) return;
             if (collision.GetComponentInParent<Workplace>().HaveBee()) return;
 
-            _lastStationPosition = collision.transform.position;
-            _lastWorkplace = collision.GetComponentInParent<Workplace>();
-            _lastWorkplaceIndex = _lastWorkplace.GetWorkplaceIndex();
+            SetPosition(collision.transform);
         }
 
         private void OnTriggerExit2D(Collider2D collision) {
@@ -96,6 +97,13 @@ namespace GOM.Components.Bees {
             _lastStationPosition = Vector3.zero;
             _lastWorkplaceIndex = -1;
             _lastWorkplace = null;
+        }
+
+        public void SetPosition(Transform pos)
+        {
+            _lastStationPosition = pos.transform.position;
+            _lastWorkplace = pos.GetComponentInParent<Workplace>();
+            _lastWorkplaceIndex = _lastWorkplace.GetWorkplaceIndex();
         }
 
         public void SetWorkingState(bool isWorking) { _isWorking = isWorking; }

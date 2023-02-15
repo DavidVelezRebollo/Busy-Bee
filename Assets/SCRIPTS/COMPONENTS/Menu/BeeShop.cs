@@ -69,8 +69,8 @@ namespace GOM.Components.Menu
             {
                 if (Bees[index].IsWorking()) return;
                 BeesSelected--;
-                Bees[index].gameObject.SetActive(false);
                 _workplaceManager.DeleteBee(Bees[index]);
+                Bees[index].gameObject.SetActive(false);
                 Debug.Log("Abeja" + index + "desactivada");
                 Buttons[index].image.sprite = ButtonSprites[0];
             }

@@ -21,6 +21,7 @@ namespace GOM.Components.Workplaces {
         [SerializeField] private int NewHoneySprite;
         [SerializeField] private bool FlipBee;
         [SerializeField] private WorkplaceType Type;
+        [SerializeField] private GameObject BeeContainer;
 
         private PlayerManager _player;
         private SoundManager _soundManager;
@@ -78,7 +79,10 @@ namespace GOM.Components.Workplaces {
 
         public bool HaveBee() { return WorkingBee != null; }
 
-        public void SetWorkingBee(BeeComponent bee) { WorkingBee = bee; }
+        public void SetWorkingBee(BeeComponent bee) { 
+            WorkingBee = bee;
+            if (bee != null) { bee.SetPosition(BeeContainer.transform); }
+        }
 
         public BeeComponent GetWorkingBee() { return WorkingBee; }
 
