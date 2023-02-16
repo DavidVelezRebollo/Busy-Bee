@@ -146,8 +146,12 @@ namespace GOM.Components.Workplaces {
 
             if (Type is WorkplaceType.BigBottiling or WorkplaceType.SmallBottling)
                 _currentFlower.ChangeCurrentBottle(Type == WorkplaceType.BigBottiling ? BottleType.Big : BottleType.Small);
-            
-            _currentFlower.ChangeSprite(_currentFlower.GetCurrentBottle() == BottleType.Small ? NewHoneySprite + 1 : NewHoneySprite);
+
+            if (Type == WorkplaceType.Cover) {
+                _currentFlower.ChangeSprite(_currentFlower.GetCurrentBottle() == BottleType.Small ? NewHoneySprite + 1 : NewHoneySprite);
+            } else {
+                _currentFlower.ChangeSprite(NewHoneySprite);
+            }
             _soundManager.Play("Complete");
         }
     }

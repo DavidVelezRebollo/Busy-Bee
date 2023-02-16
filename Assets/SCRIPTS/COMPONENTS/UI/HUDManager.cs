@@ -23,12 +23,13 @@ namespace GOM.Components.UI {
         [SerializeField] Sprite[] BeeSprites;
         [Space(10)] [Header("Game UI Elements")] 
         [SerializeField] private Sprite[] HoneyIcons;
-        [SerializeField] private Image[] NextHoney;
+        [SerializeField] private GameObject NextHoneyContainer;
         [SerializeField] private GameObject FinalHive;
 
         private GameManager _gameManager;
         private PlayerManager _player;
         private Timer _gameTimer;
+        private Image[] _nextHoney = new Image[3];
         private List<GameObject> _hives = new List<GameObject>();
         private List<FlowerComponent> _nextHoneys = new List<FlowerComponent>();
         private int _currentFlowerIndex;
@@ -43,6 +44,10 @@ namespace GOM.Components.UI {
 
             _gameTimer = new Timer(0, 0);
             HoneyGenerator.OnFlowerGeneration += ShowNextFlower;
+        }
+
+        private void OnDisable() {
+            HoneyGenerator.OnFlowerGeneration -= ShowNextFlower;
         }
 
         private void Update() {
@@ -81,17 +86,21 @@ namespace GOM.Components.UI {
 
             if (_currentFlowerIndex > 3) return;
 
-            NextHoney[_currentFlowerIndex].color = new Color(1f, 1f, 1f, 1f);
-            NextHoney[_currentFlowerIndex].sprite = HoneyIcons[(int) _nextHoneys[_currentFlowerIndex].GetFinalType()];
+            for (int i = 0; i < NextHoneyContainer.transform.childCount; i++) {
+                _nextHoney[i] = NextHoneyContainer.transform.GetChild(i).GetComponent<Image>();
+            }
+
+            _nextHoney[_currentFlowerIndex].color = new Color(1f, 1f, 1f, 1f);
+            _nextHoney[_currentFlowerIndex].sprite = HoneyIcons[(int) _nextHoneys[_currentFlowerIndex].GetFinalType()];
             _currentFlowerIndex++;
         }
 
         private void ChangeCurrentFlower(bool isMiss) {
             for(int i = 0; i < _nextHoneys.Count - 1; i++) {
-                NextHoney[i].sprite = NextHoney[i + 1].sprite;
+                _nextHoney[i].sprite = _nextHoney[i + 1].sprite;
             }
 
-            NextHoney[_currentFlowerIndex - 1].color = new Color(1f, 1f, 1f, 0f);
+            _nextHoney[_currentFlowerIndex - 1].color = new Color(1f, 1f, 1f, 0f);
             _nextHoneys.RemoveAt(--_currentFlowerIndex);
 
             if (isMiss) return;

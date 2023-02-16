@@ -12,6 +12,7 @@ namespace GOM.Components.Honey {
         [Tooltip("Prefabs of the honey that will be generated")]
         [SerializeField] private GameObject[] FlowerPrefabs;
         [SerializeField] private TextMeshProUGUI NextFlowerTime;
+        [SerializeField] private GameObject FlowerParent;
 
         public static Action<FlowerComponent> OnFlowerGeneration;
 
@@ -61,6 +62,7 @@ namespace GOM.Components.Honey {
                 finalType = Random.Range(0f, 1f) < 0.5 ? HoneyTypes.SourSmall : HoneyTypes.SourBig;
 
             GameObject flower = Instantiate(FlowerPrefabs[nextFlower], transform.position, Quaternion.identity);
+            flower.transform.parent = FlowerParent.transform;
             FlowerComponent component = flower.GetComponent<FlowerComponent>();
             component.SetFinalType(finalType);
             OnFlowerGeneration?.Invoke(component);
